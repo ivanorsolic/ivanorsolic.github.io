@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>Creating a New Theme</title>
-      <link>https://ivanorsolic.github.io/post/creating-a-new-theme/</link>
+      <title>Tempest attacks using a DVB-T stick</title>
+      <link>https://ivanorsolic.github.io/post/tempest/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <guid>https://ivanorsolic.github.io/post/tempest/</guid>
+      <description>SDR Software-defined radio je koncept u kojem je RF komunikacija u obliku procesiranja signala postignuta softverskim putem umjesto klasičnog hardverskog. Software-defined radio, kao sam uređaj, je RF komunikacijski sistem koji implementira taj softver u svrhu procesiranja signala. Takav uređaj sposoban je primati i odašiljati radiovalove isključivo na temelju korištenog softvera.
+Idealni SDR prijemnik sastoji se od antene, AD konvertera spojenog na antenu, procesora digitalnog signala (DSP) koji čita izlaz konvertera te softvera koji bi to dalje obrađivao prema potrebi korisnika.</description>
     </item>
     
     <item>

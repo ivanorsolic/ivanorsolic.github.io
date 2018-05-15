@@ -39,9 +39,18 @@
     </item>
     
     <item>
+      <title>Gamedev</title>
+      <link>https://ivanorsolic.github.io/tags/gamedev/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/gamedev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Go</title>
       <link>https://ivanorsolic.github.io/tags/go/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/go/</guid>
       <description></description>
@@ -50,7 +59,7 @@
     <item>
       <title>Golang</title>
       <link>https://ivanorsolic.github.io/tags/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/golang/</guid>
       <description></description>
@@ -77,9 +86,27 @@
     <item>
       <title>Hugo</title>
       <link>https://ivanorsolic.github.io/tags/hugo/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infosec</title>
+      <link>https://ivanorsolic.github.io/tags/infosec/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/infosec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://ivanorsolic.github.io/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/java/</guid>
       <description></description>
     </item>
     
@@ -102,11 +129,29 @@
     </item>
     
     <item>
+      <title>Lwjgl</title>
+      <link>https://ivanorsolic.github.io/tags/lwjgl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/lwjgl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Responsive</title>
       <link>https://ivanorsolic.github.io/tags/responsive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/responsive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sdr</title>
+      <link>https://ivanorsolic.github.io/tags/sdr/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/sdr/</guid>
       <description></description>
     </item>
     
@@ -140,9 +185,18 @@
     <item>
       <title>Themes</title>
       <link>https://ivanorsolic.github.io/tags/themes/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tut</title>
+      <link>https://ivanorsolic.github.io/tags/tut/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/tut/</guid>
       <description></description>
     </item>
     

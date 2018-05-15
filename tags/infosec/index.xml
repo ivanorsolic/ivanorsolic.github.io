@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infosec on Ori&#39;s blog</title>
+    <link>https://ivanorsolic.github.io/tags/infosec/</link>
+    <description>Recent content in Infosec on Ori&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ivanorsolic.github.io/tags/infosec/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tempest attacks using a DVB-T stick</title>
+      <link>https://ivanorsolic.github.io/post/tempest/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/post/tempest/</guid>
+      <description>SDR Software-defined radio je koncept u kojem je RF komunikacija u obliku procesiranja signala postignuta softverskim putem umjesto klasičnog hardverskog. Software-defined radio, kao sam uređaj, je RF komunikacijski sistem koji implementira taj softver u svrhu procesiranja signala. Takav uređaj sposoban je primati i odašiljati radiovalove isključivo na temelju korištenog softvera.
+Idealni SDR prijemnik sastoji se od antene, AD konvertera spojenog na antenu, procesora digitalnog signala (DSP) koji čita izlaz konvertera te softvera koji bi to dalje obrađivao prema potrebi korisnika.</description>
+    </item>
+    
+  </channel>
+</rss>

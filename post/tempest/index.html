@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tempest attacks using a DVB-T stick</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://ivanorsolic.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c#.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.40.3" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Tempest attacks using a DVB-T stick</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Tuts and write-ups</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:ivanorsolic@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/ivanorsolic/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ivanorsolic/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ivanorsolic/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/ivanorsolic/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/tempest/">Tempest attacks using a DVB-T stick</a></h4>
+    <h5>September 28, 2014</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/tut"><kbd class="item-tag">tut</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h1 id="sdr">SDR</h1>
+
+<p>Software-defined radio je koncept u kojem je RF komunikacija u obliku procesiranja signala postignuta softverskim putem umjesto klasičnog hardverskog. Software-defined radio, kao sam uređaj, je RF komunikacijski sistem koji implementira taj softver u svrhu procesiranja signala. Takav uređaj sposoban je primati i odašiljati radiovalove isključivo na temelju korištenog softvera.</p>
+
+<p>Idealni SDR prijemnik sastoji se od antene, AD konvertera spojenog na antenu, procesora digitalnog signala (DSP) koji čita izlaz konvertera te softvera koji bi to dalje obrađivao prema potrebi korisnika. U slučaju odašiljača proces je obrnut, DSP generira niz podataka koji se šalju DA konverteru koji je spojen na antenu.</p>
+
+<h3 id="prijemnik">Prijemnik</h3>
+
+<p><img src="/img/prijemnik.png#center" alt="" /></p>
+
+<h3 id="odašiljač">Odašiljač</h3>
+
+<p><img src="/img/odasiljac.png#center" alt="" /></p>
+
+<p>Zbog tehnoloških ograničenja idealni SDR je neizvediv, te zbog toga većina prijemnika u praksi ima miješalo, lokalni oscilator i filter signala čijim djelovanjem dobivamo međufrekvencijski signal koji se tada konvertira u digitalni signal.</p>
+
+<h1 id="povijest-sdr-a">Povijest SDR-a</h1>
+
+<p>Sam koncept SDR-a datira još iz 70ih godina prošlog stoljeća, često spomenut u kontekstu američkih i europskih obrambenih snaga. Unatoč razvijanju koncepta 70ih pretpostavlja se da je prvi SDR konstruiran 1988. godine od strane njemačkih inženjera Petra Hoehera  i Helmutha Langa u njemačkom centru za zračno-kosmički prostor.</p>
+
+<p>Jedna od prvih javnih SDR inicijativa je američki vojni projekt kodnog naziva SpeakEasy. Cilj je bio emulirati 10 vojnih radija u rasponu od 2Mhz do 2Ghz te postići komunikaciju između pješadije, mornarice, zrakoplovnih snaga i satelita. Nekoliko godina kasnije prerađena verzija SpeakEasy sustava postaje JTRS (Joint Tactical Radio System) koji je danas u upotrebi američke vojske.</p>
+
+<h1 id="trenutna-primjena">Trenutna primjena</h1>
+
+<p>SDR primarno svoju svrhu nalazi u vojsci u prethodno spomenutom projektu JTRS. Za amatersku uporabu postoje gotova SDR rješenja kao što su Zeus ZS-1, HackRF One i SoftRock SDR.
+Jeftinija alternativa SDR prijemnika su DVB-T USB prijemnici koji koriste <a href="http://superkuh.com/rtlsdr.html">Realtekov RTL2832U kontroler te Micro R820T tuner</a> koji nam omogućava raspon frekvencije od 24 do 1766MHz što pokriva veći dio UHF(Ultra High Frequency) spektra. Uz pomoć takvog prijemnika, dalje u projektu, biti će izvedena tehnička implementacija TEMPEST napada.</p>
+
+<h1 id="tempest">TEMPEST</h1>
+
+<p>Telecommunications Electronics Material Protected from Emanating Spurious Transmissions ili skraćeno TEMPEST je kodni naziv za projekt američke nacionalne sigurnosne agencije (NSA) koji se odnosi na prikupljanje podataka informacijskih sustava na temelju propuštanja prilikom emanacije, a  uključuje propuštanje radiovalova, električnih signala, zvukova i vibracija. U projekt su uključene metode prikupljanja podataka od drugih te metode obrane od istih. Detalji i specifikacije projekta opisani su u klasificiranim dokumentima <a href="https://cryptome.org/jya/nacsim-5000/nacsim-5000.htm">NACSIM 5000/5100A</a>.</p>
+
+<h1 id="primjena">Primjena</h1>
+
+<ul>
+<li><p><a href="Wim van Eck (1985.)">https://cryptome.org/emr.pdf</a> prisluškivanje CRT monitora s opremom u vrijednosti od 15$ i tv prijemnikom</p></li>
+
+<li><p><a href="Prisluškivanje LED indikatora na modemima">http://www.foo.be/docs-free/tempest/optical_tempest.pdf</a></p></li>
+
+<li><p><a href="Prisluškivanje radijacije pritiskanja tipki na žićnim i bežićnim tipkovnicama">https://www.blackhat.com/presentations/bh-usa-09/BARISANI/BHUSA09-Barisani-Keystrokes-SLIDES.pdf</a></p></li>
+
+<li><p><a href="AirHopper">https://arxiv.org/ftp/arxiv/papers/1411/1411.0237.pdf</a>, keylogger koji koristi radio frekvencije (FM) za slanje podataka s izoliranog računala na smartphone napadača</p></li>
+
+<li><p><a href="BitWhisper">http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=7243739</a>, napad na izolirana računala temeljen na interpretaciji fluktuacija temperature</p></li>
+
+<li><p><a href="GSMem">https://www.usenix.org/node/190937</a>, eksfiltracija podataka izoliranih računala preko GSM, UMTS I LTE frekvencija koristeći zračenje memorijske sabirnice</p></li>
+</ul>
+
+<h1 id="korištena-oprema">Korištena oprema</h1>
+
+<p>Za izradu ovog projekta, koristili smo sljedeću opremu:</p>
+
+<ul>
+<li><p>HackRF One SDR prijemnik</p></li>
+
+<li><p>RTL2832 prijemnik</p></li>
+
+<li><p>IBM Thinkvision monitor</p></li>
+
+<li><p>NFREN 171M monitor</p></li>
+
+<li><p>Axil TV/FM 36dB sobna antena C (AN0256L)</p></li>
+</ul>
+
+<h1 id="hackrf-one">HackRF One</h1>
+
+<p><img src="/img/hackrf.jpg#center" alt="" /></p>
+
+<p><a href="https://greatscottgadgets.com/hackrf/">HackRF One</a> je SDR uređaj koji može odašiljati i primati radio signale u rasponu od 1 MHz do 6 GHz. Dizajniran je kako bi omogućio testiranje i razvoj modernih i audio tehnologija sljedećih generacija. HackRF je hardverska platforma otvorenog koda koja se može koristiti kao USB periferni uređaj ili se može programirati za samostalne operacije.</p>
+
+<h1 id="rtl2832">RTL2832</h1>
+
+<p><img src="/img/rtl2832.jpg#center" alt="" /></p>
+
+<p><a href="https://www.alibaba.com/product-detail/Latest-DVB-T-MPEG4-USB-TV_657951957.html">RTL2832</a> je SDR uređaj koji može odašiljati i primati radio signale u rasponu od 24MHz do 1766 MHz (1850MHz sa eksperimentalnim driverima). Iako je dizajniran kako bi korisnicima omogućio gledanje DVB-T TV kanala, te slušanje FM/AM radio stanica, budući da se može koristiti za različite frekvencije i kanale u raznim zemljama diljem Europe, možemo ga koristiti kao SDR pomoću kojega primamo i odašiljemo radio signale koristeći programsku podršku otvorenog koda.</p>
+
+<p><img src="/img/rtl2832diss.jpg#center" alt="" /></p>
+
+<p><img src="/img/realtek.jpg#floatleft" alt="" />
+<img src="/img/dvbtuner.jpg#floatright" alt="" /></p>
+
+<p>Rastavljajući DVB-T Tuner možemo potvrditi da koristi Realtekov <a href="http://www.realtek.com.tw/products/productsView.aspx?Langid=1&amp;PFid=35&amp;Level=4&amp;Conn=3&amp;ProdID=257">RTL2832U DVB-T</a> COFDM demodulator, te da koristi <a href="http://radioaficion.com/cms/r820t-rafael-micro/">Rafael Micro R820T/2</a> tuner.</p>
+
+<h1 id="axil-an0256l">Axil AN0256L</h1>
+
+<p><img src="/img/antena.jpg#center" alt="" />
+<a href="http://engelaxil.hr/proizvodi/antenska-oprema/sobne-antene/axil-tvfm-36db-sobna-antena-c-26/">Axil AN0256L</a> je aktivna sobna antena sa pojačivačem i koaksijalnim konektorom koju smo koristili zajedno sa RTL2832 prijemnikom.
+Antena posjeduje LTE zaštitu (od upada kanala 61-69 namjenjenih mobilnim broadband servisima). Raspon frekvencija antene je od 40 do 862 MHz, a izlazna impedancija je 75 Ω.</p>
+
+<h1 id="hdsdr">HDSDR</h1>
+
+<p>High Definition Software Defined Radio (HDSDR) je besplatni Software Defined Radio program za Microsoft Windows operacijske sustave, koji je napredna verzija Winrad-a od Alberta di Bene.
+Najčešća primjena ovog programa je slušanje radija, slušanje kratkotalasnih radio emitiranja (SWL), radio astronomija, hvatanje ne-direkcionalnih radio odašiljača (NDB hunting) te analiza čitavog radio spektra.
+U sklopu ovog projekta, HDSDR je korišten za otkrivanje frekvencija na kojima postoje nenamjerna zračenja računalnih monitora (putem kabla).</p>
+
+<p><img src="/img/hdsdr.gif#center" alt="" /></p>
+
+<h1 id="postavke-hdsdr-a">Postavke HDSDR-a</h1>
+
+<p>Budući da ne želimo dekodirati signal, nego ga vidjeti u sirovom obliku prilikom promjene slike na monitoru, način signala smo postavili na Continuous Wave (CW).
+Spektar koji gledamo je maksimalno udaljen, kako bi što veći raspon signala stao na ekran, te je brzina očitavanja uzoraka (Sample Rate) povećana na maksimum, kako bi sa što većom rezolucijom uočili promjenu u emisiji radio valova.
+Gain na RTL2832 prijemniku je postavljen na +16.5dB, dok je na aktivnoj anteni postavljen na cca. 50%. Ove vrijednosti su određene na temelju pokušaja i pogrešaka, te se razlikuju od uređaja do uređaja.</p>
+
+<p><img src="/img/hdsdr1.png#center" alt="" /></p>
+
+<p>Na sljedećoj slici možemo vidjeti promjenu u emisiji radijacije monitora putem VGA kabla izazvanu promjenom slike na monitoru. Na monitoru je u razdoblju od 9:10:17 PM do 9:10:19 prikazan &ldquo;checkerboard&rdquo; uzorak, a u ostalim razdobljima prazan prozor web preglednika. # Inkrementalno skenirajući raspon valnih duljina od 200 MHz do 800 MHz, na frekvenciji između 332 MHz do 333 MHz uočena je korelacija promjene nenamjernih emisija radiovalova sa promjenom prikazane slike na monitoru, sa vrhovima udaljenima u intervalima od 600 KHz.</p>
+
+<p><img src="/img/hdsdr2.png#center" alt="" /></p>
+
+<h1 id="tempestsdr">TempestSDR</h1>
+
+<p><img src="/img/tempest.gif#center" alt="" /></p>
+
+<p><a href="https://github.com/martinmarinov/TempestSDR">TempestSDR</a> je software toolkit za udaljeno prisluškivanje monitora koristeći SDR prijemnik. Rasterski video se prenosi putem kabla povezanog na monitor, jednu po jednu liniju piksela, enkodiranu kao izmjenični napon. Taj napon generira elektromagnetske valove koje SDR prijemnik može „pokupiti“. Ovaj software mapira jačinu primljenog polja piksela na nijansu sivog tona u realnom vremenu. To stvara lažnu procjenu boje originalnog video signala.</p>
+
+<p>Ovaj toolkit koristi komercijalno dostupne SDR prijemnike koje je veoma lako pribaviti te primijeniti bez mnogo prethodnog znanja o ovoj vrsti napada. Sve parametre poput rezolucije i frekvencije osvježivanja slike je moguće procijeniti pomoću softvera.</p>
+
+<h1 id="izvođenje-napada">Izvođenje napada</h1>
+
+<p>Koristeći TempestSDR alat, te ranije otkrivenu frekvenciju koristeći HDSDR, pokušati ćemo rekonstruirati sljedeću sliku sa monitora koristeći nenamjerne emisije koje dolaze iz VGA kabla kojim je monitor spojen na računalo.</p>
+
+<p><img src="/img/monitor.jpg#center" alt="" /></p>
+
+<p><img src="/img/tempest1.png#center" alt="" /></p>
+
+<p>Na slici iznad možemo vidjeti kako je rekonstrukcija djelomično nepotpuna u gornjem lijevom kutu, te da u određenoj količini &ldquo;putuje&rdquo; slijeva na desno. Razlog tomu je netočno podešen FPS (odnosno refresh rate) te loša prijemnik. Budući da monitor prikazuje sliku u rezoluciji 1280x1024, brzinom od 75Hz, sa dubinom boje od 24 bita, možemo pretpostaviti da će se &ldquo;najbolje&rdquo; zračenje nalaziti na frekvenciji od 2.359 GHz (1280x1024x75x24 = 2359296000 Hz), ali RTL2832 nažalost ne podržava frekvencije iznad 2GHz. Druga najbolja odluka se nalazila na 332-333 GHz, te zbog lošije antene i postojanja šuma uzrokuje šetanje slike koje vidimo na slici iznad.</p>
+
+<h1 id="video">Video</h1>
+
+<p><a href="http://www.youtube.com/watch?v=Ko7t8iYCyAk"><img src="http://img.youtube.com/vi/Ko7t8iYCyAk/0.jpg#center" alt="HDSDR traženje frekvencije nenamjernih emisija" /></a>
+<a href="http://www.youtube.com/watch?v=0ynSjI8l49M"><img src="http://img.youtube.com/vi/Ko7t8iYCyAk/0.jpg#center" alt="TempestSDR napad" /></a></p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "oriblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
