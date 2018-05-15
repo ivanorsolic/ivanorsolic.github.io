@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Embedded</title>
+      <link>https://ivanorsolic.github.io/tags/embedded/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/embedded/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gamedev</title>
       <link>https://ivanorsolic.github.io/tags/gamedev/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -95,7 +104,7 @@
     <item>
       <title>Infosec</title>
       <link>https://ivanorsolic.github.io/tags/infosec/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/infosec/</guid>
       <description></description>
@@ -134,6 +143,42 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/lwjgl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netsec</title>
+      <link>https://ivanorsolic.github.io/tags/netsec/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/netsec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>https://ivanorsolic.github.io/tags/networking/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://ivanorsolic.github.io/tags/python/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Responder</title>
+      <link>https://ivanorsolic.github.io/tags/responder/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/responder/</guid>
       <description></description>
     </item>
     

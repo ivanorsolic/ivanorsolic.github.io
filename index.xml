@@ -6,7 +6,7 @@
     <description>Recent content on Ori&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Jan 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivanorsolic.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -45,6 +45,16 @@
       
       <guid>https://ivanorsolic.github.io/project/project4/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Snagging creds /w Responder.py</title>
+      <link>https://ivanorsolic.github.io/post/2017-01-28-snagging-creds-w-responder.py/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/post/2017-01-28-snagging-creds-w-responder.py/</guid>
+      <description>Snagging credentials Image taken from: DashlaneThis tutorial will go through stealing credentials from a fully locked, fully patched (at the time of writing) Windows, Mac OS X or Linux machine.
+Since the time of writing, the attack has become very well documented on the internet, and patches were released from OS manufacturers such as Microsoft1. Unfortunately, even after testing the attack on a Windows 10 PC with the newest patches, it was still successful.</description>
     </item>
     
     <item>
