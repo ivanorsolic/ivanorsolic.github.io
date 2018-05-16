@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AI and OCR: Volunteering.today</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://ivanorsolic.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c#.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.40.3" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">AI and OCR: Volunteering.today</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Tuts and write-ups</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:ivanorsolic@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/ivanorsolic/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ivanorsolic/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ivanorsolic/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/ivanorsolic/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ai-and-ocr---volunteeringtoday/">AI and OCR: Volunteering.today</a></h4>
+    <h5>January 28, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/car-hacking"><kbd class="item-tag">car hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h1 id="volunteering-today">Volunteering.today</h1>
+
+<p><img src="/img/sirotilja.png#center" alt="Sirotilja Valley" /></p>
+
+<p>Recently, my team and I were competing an the <a href="http://changecode.hr/"><strong>ChangeCode</strong></a> hackathon in Zagreb, at the King ICT company.</p>
+
+<p>The task was helping three kinds of people:</p>
+
+<ul>
+<li>Volunteering centers</li>
+<li>Volunteering event organizers</li>
+<li>Volunteers</li>
+</ul>
+
+<p>We were free to come up with anything we thought would be helpful, and we had 24 hours to do so. We managed to get 10.000 HRK award, and an offer to continue working on the app to implement it completely with the organizers.</p>
+
+<p><img src="/img/award.jpg#center" alt="Sirotilja Valley" /></p>
+
+<h1 id="the-idea">The idea</h1>
+
+<p>The main problems we found while researching current solutions for aggregating volunteering events were:</p>
+
+<ul>
+<li>Fragmentation of volunteering centers - every town had their own, there were no station-wide repositories of events</li>
+<li>A long, long and unnecessary application process, for both the organizers and volunteers</li>
+</ul>
+
+<p>Solution?</p>
+
+<blockquote>
+<p><strong>We created an AI which searches social networks for volunteering events, and automatically adds them to our website which is a repository of all volunteering events in the state. The AI then notifies the organizers they can log in to the site using their social accounts and access their events and their volunteers. Volunteers also accessed events with a one-click login process. We also sprinkled the app with some features like facial recognition of all of the volunteers that attended a particular event based on event photos, and automatic attendance list generation using the same. Also, every event includes analytics such as how many people are talking about it, sharing it.</strong></p>
+</blockquote>
+
+<h1 id="how-did-we-do-it">How did we do it?</h1>
+
+<p><img src="/img/bebek.png#center" alt="" /></p>
+
+<p><strong><a href="https://github.com/ivanorsolic/VolunteeringToday">The GitHub repository can be found here.</a></strong></p>
+
+<p>Since we had only 24 hours to come up with the idea and implement it, we used Twitter as a PoC. The same process can be applied to other social networks.</p>
+
+<p>The process goes something like this:</p>
+
+<ol>
+<li>Scrape Twitter for Tweets containing particular volunteering-related hashtags, such as: #Volunteering, #VolunteeringEvent or any tweets related to a particular cause, such as: #VolunteerForImmigrants. Download such Tweets and any accompanying media.</li>
+<li>Identify the most important information from the downloaded tweet, such as the location, date, event name, contact. Use OCR if media is present.</li>
+<li>Get Analytics for the Tweet for frontend analytics such as how many people have retweeted it, replied to it, discussing it, etc.</li>
+<li>Send the data to the backend API which then generates a new post on the Volunteering.today page.</li>
+<li>Tweet to the event organizer that their event was added to our web, and that they can access it and their registered volunteers with a one-click sign-up using their social media account.</li>
+<li>Enable Volunteers to register for events with a single click, and generate an attendance list cross-referencing the registered volunteers with faces recognized on pictures of the event uploaded by the event owner.</li>
+</ol>
+
+<blockquote>
+<p><a href="https://github.com/ivanorsolic/VolunteeringToday">The GitHub repo</a> contains all of the code, and it&rsquo;s free to use without any attribution.</p>
+
+<p>Free and open source code rules. ♥</p>
+</blockquote>
+
+<p>So let&rsquo;s get to it. Every chapter will contain a hyperlink to our GitHub repo where our implementation can be fully found.</p>
+
+<h2 id="scraping-tweets-https-github-com-ivanorsolic-volunteeringtoday-tree-twitterscripts"><a href="https://github.com/ivanorsolic/VolunteeringToday/tree/TwitterScripts">Scraping tweets</a></h2>
+
+<p>Using the TwitterAPI, scraping tweets is pretty simple. We also used the <a href="https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries">TwitterSearch</a> library to easily parse the API responses.</p>
+
+<h3 id="example-tweet"><strong>Example tweet:</strong></h3>
+
+<p><img src="/img/tweet.png#center" alt="" /></p>
+
+<h3 id="the-code-for-scraping-it-looks-something-like-this">The code for scraping it looks something like this:</h3>
+
+<pre><code class="language-python">try:
+    tso = TwitterSearchOrder()
+    tso.set_keywords(['#VolunteeringHashTags, #AnythingYouWantToSearchFor']) 
+    # tso.set_language('de') # if we wanted to search for tweets written in German only
+    tso.set_include_entities(True)
+    ts = TwitterSearch(
+        consumer_key='secret...',
+        consumer_secret='secret...',
+        access_token='secret...-secret...',
+        access_token_secret='secret...')
+    
+    for tweet in ts.search_tweets_iterable(tso):
+        data = {}
+        data = generateDataFromTweet(data, tweet)
+        return json.dumps(data, ensure_ascii=False)
+</code></pre>
+
+<p>The <strong><em>generateDataFromTweet</em></strong> function just parses the data from the JSON and saves it to our dictionary.</p>
+
+<p><a href="https://github.com/ivanorsolic/VolunteeringToday/blob/TwitterScripts/TwitterScraper.py">The code can be found here.</a></p>
+
+<p>After getting and parsing the tweet, we just write it to a file:</p>
+
+<pre><code class="language-python">with codecs.open(&quot;lib/twitter.json&quot;, &quot;w&quot;, &quot;utf-8-sig&quot;) as datoteka:
+            datoteka.write(json)
+
+We then analyze the tweet using the TwitterAPI to get data necessary for frontend analytics generation.
+
+# Get Retweets, Favorites, Location and IDs
+def getBasicData(data):
+    r = api.request('statuses/show/:%s' % id_tweet)
+    for item in r.get_iterator():
+        data[&quot;RetweetCount&quot;] = item[&quot;retweet_count&quot;]
+        data[&quot;FavoriteCount&quot;] = item[&quot;favorite_count&quot;]
+        data[&quot;IDStatus&quot;] = item[&quot;id&quot;]
+        data[&quot;IDStr&quot;] = item[&quot;user&quot;][&quot;id_str&quot;]
+        data[&quot;Location&quot;] = item[&quot;user&quot;][&quot;location&quot;]
+    return data
+
+# Get the number of replies
+def getReplyCount(data):
+    url = &quot;https://api.twitter.com/1.1/statuses/mentions_timeline.json?since_id=&quot; + data[&quot;IDStr&quot;]
+    r = twitter.get(url)
+    reply_count = 0
+    for item in r.json():
+        if item[&quot;in_reply_to_status_id&quot;] == data[&quot;IDStatus&quot;]:
+            reply_count += 1
+    data[&quot;ReplyCount&quot;] = reply_count
+    return data
+</code></pre>
+
+<h2 id="ocrapplication-https-github-com-ivanorsolic-volunteeringtoday-tree-ocrapplication"><a href="https://github.com/ivanorsolic/VolunteeringToday/tree/OCRApplication">OCRApplication</a></h2>
+
+<p>The OCRApplication is a machine-learning backed app which analyzes pictures and extracts any kind of text from them, including hand-written notes or any fonts. It was written in C# and developed using the <a href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Microsoft CognitiveServices Vision API</a>.</p>
+
+<p><a href="https://github.com/ivanorsolic/VolunteeringToday">The complete code can be found on the GitHub repo.</a></p>
+
+<h3 id="example-image">Example image</h3>
+
+<p><img src="/img/ocr.jpg#center" alt="" /></p>
+
+<h3 id="the-code">The code:</h3>
+
+<p>The <strong><em>meaty part of the code</em></strong> can be found in the <a href="https://github.com/ivanorsolic/VolunteeringToday/blob/OCRApplication/OCRApplication/OCRTools.cs"><strong>OCRTools</strong></a> class, which contains the methods necessary for image analysis and OCR.</p>
+
+<pre><code class="language-C#">public static async void analyzeImage(string imageFilePath) {
+            fileName = Path.GetFileNameWithoutExtension(imageFilePath);
+            HttpClient client = new HttpClient();
+            string uri = buildHTTPRequest(client);
+            HttpResponseMessage response;
+            byte[] byteData = getImageAsByteArray(imageFilePath);
+            response = await getResponseAndExtractText(client, uri, byteData);
+}
+
+public static void extractText() {
+            ProcessTools.startProcess(&quot;python&quot;, @&quot;lib/json_to_text.py lib/&quot; + nazivDatoteke);
+}
+
+</code></pre>
+
+<p>The <strong><em>analyzeImage</em></strong> method loads an image from a file and sends it to the Vision API, which returns the extracted data in a JSON. We can then call <a href="https://github.com/ivanorsolic/VolunteeringToday/blob/TwitterScripts/json_to_text.py"><strong>our helper Python script which parses it</strong></a> and saves it to a file.</p>
+
+<pre><code class="language-python">json_data = open(filePath + '.json', encoding='utf8').read()
+
+data = json.loads(json_data)
+data = data['regions']
+regionsLength = len(data)
+
+string = ''
+# Time-complexity much? :(
+for i in range (0, len(data)):
+    # --&gt; lines
+    for j in range (0, len(data[i]['lines'])):
+    # --&gt; words
+        for k in range(0, len(data[i]['lines'][j]['words'])):
+        # --&gt; text
+            string += data[i]['lines'][j]['words'][k]['text'] + ' '
+            
+with open(name + '.txt', 'wb') as file:
+    file.write(string.encode('UTF-8'))
+</code></pre>
+
+<h2 id="sending-the-data-to-the-backend-https-github-com-ivanorsolic-volunteeringtoday-tree-master"><a href="https://github.com/ivanorsolic/VolunteeringToday/tree/master">Sending the data to the backend</a></h2>
+
+<p>Nothing much interesting here. The data is sent to the backend using a POST request, which contains the contact info, date, location, event name, event image, etc.</p>
+
+<p><a href="https://github.com/ivanorsolic/VolunteeringToday/tree/master">The backend</a> populates the web with new pages generated from data found in the database every few minutes, using ASP.NET.</p>
+
+<p>After the page generation is successful, the backend app triggers a <a href="https://github.com/ivanorsolic/VolunteeringToday/blob/TwitterScripts/PostTweets.py"><strong>Python TweetBot</strong></a> which notifies the event owner that his event has been added to our event database.</p>
+
+<pre><code class="language-python">#Message that will be tweeted to the owner
+message = &quot;Hi &quot; + quote_plus(&quot;@&quot;+username) + &quot;. I just wanted to let you know that your event was added to our volunteering database, where you can log in and manage it, and find volunteers: &quot;
+url = &quot;http://volunteering.today&quot;
+url = quote_plus(url)
+
+def getTwitterSession():
+    return OAuth1Session('secret...',
+                            client_secret='secret...',
+                            resource_owner_key='secret...-secret...',
+                            resource_owner_secret='secret...')
+
+twitter = getTwitterSession()
+
+# Send out the tweet using TwitterApi
+r = twitter.post(&quot;https://api.twitter.com/1.1/statuses/update.json?status=&quot;+message+&quot;%20&quot;+url)
+r = twitter.post(&quot;https://api.twitter.com/1.1/direct_messages/new.json?text=&quot; + message +&quot;%20&quot;+url + &quot;&amp;user_id=&quot; + userID)
+</code></pre>
+
+<h3 id="example-tweets-to-generated-events">Example tweets to generated events</h3>
+
+<p><img src="/img/tweetovi.png#center" alt="" /></p>
+
+<p><img src="/img/parsedtweets.png#center" alt="" /></p>
+
+<h3 id="example-event">Example event</h3>
+
+<p><img src="/img/objava.png#center" alt="" /></p>
+
+<h3 id="example-text-detected-from-tweet-media">Example text detected from tweet media</h3>
+
+<p><img src="/img/objavatekst.png#center" alt="" /></p>
+
+<h2 id="facial-recognition-and-attendance-generation-https-github-com-ivanorsolic-volunteeringtoday-tree-facerecognitionapplication"><a href="https://github.com/ivanorsolic/VolunteeringToday/tree/FaceRecognitionApplication">Facial recognition and attendance generation</a></h2>
+
+<p>Having some time left over, we started implementing the facial recognition features of the app, which used <a href="https://azure.microsoft.com/en-us/services/cognitive-services/face/"><strong>Microsoft CognitiveServices Face API</strong></a> which can recognize up to 64 faces on a single picture, remembering up to 10.000 unique faces in a group (a group would be an event in our app).</p>
+
+<h3 id="example-input-photos-per-user">Example input photos per user</h3>
+
+<p>These are the images a user uploads while registering.</p>
+
+<p><img src="/img/teamface.png#center" alt="" /></p>
+
+<h3 id="example-event-photo">Example event photo</h3>
+
+<p><img src="/img/sirotilja.png#center" alt="" /></p>
+
+<h3 id="detected-faces">Detected faces</h3>
+
+<p><img src="/img/sirotiljadetected.png#center" alt="" /></p>
+
+<h3 id="generated-attendance-list">Generated attendance list</h3>
+
+<p><img src="/img/objavadetected.png#center" alt="" /></p>
+
+<h3 id="the-codez">The codez</h3>
+
+<p><a href="https://github.com/ivanorsolic/VolunteeringToday/tree/FaceRecognitionApplication">Once again, the entire code can be found on the repo.</a></p>
+
+<p><strong><a href="https://github.com/ivanorsolic/VolunteeringToday/blob/FaceRecognitionApplication/FaceRecognitionApplication/IdentifyFace.cs">The meaty part of the code is the IdentifyFace class.</a></strong></p>
+
+<pre><code class="language-C#">class IdentifyFace
+    {   
+        public async static void identifyFace(string base64)
+        {
+            Stream image = ImageTools.Base64ToImage(base64);
+            var faces = await Globals.faceServiceClient.DetectAsync(image);
+            var faceIds = faces.Select(face =&gt; face.FaceId).ToArray();
+
+            var results = await Globals.faceServiceClient.IdentifyAsync(Globals.personGroupId, faceIds);
+            foreach (var identifyResult in results)
+            {
+                Console.WriteLine(&quot;Result of face: {0}&quot;, identifyResult.FaceId);
+                if (identifyResult.Candidates.Length == 0)
+                {
+                    Console.WriteLine(&quot;No one identified&quot;);
+                }
+                else
+                {
+                    var candidateId = identifyResult.Candidates[0].PersonId;
+                    var person = await Globals.faceServiceClient.GetPersonAsync(Globals.personGroupId, candidateId);
+                    Console.WriteLine(&quot;Identified as {0}&quot;, person.Name);
+                }
+            }
+
+        }
+    }
+</code></pre>
+
+<p>It uses the Base64 passed as a parameter to it and sends it to the Face API which then returns if the face matches any of our registered volunteers. Pretty simple, pretty sweet.</p>
+
+<h1 id="the-hardest-part">The hardest part</h1>
+
+<p>The hardest part of it all was, funnily enough, presenting all of it in 5 minutes to a judge panel.</p>
+
+<p>It&rsquo;s fun to tweet an event, and see it getting up on our website in a matter of seconds, but the very simplicity of it, the one-click registration and login, the automatic generation of the website looks like its nothing special. And it is a complex-ish system built in just under 24 hours, so the presentation was the most stressful part of it, as you can see on the look of our teammate Ibrahim&rsquo;s face:</p>
+
+<p><img src="/img/worriedibro.jpg#center" alt="" /></p>
+
+<p><img src="/img/presenting.jpg#center" alt="" /></p>
+
+<p>But we did alright, after a sleepless night and a couple of hiccups, we did well enough to get an award, and we&rsquo;re proud for it.</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/tempest/">Tempest attacks using a DVB-T stick</a></h4>
+    <h5>February 6, 2018</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/tut"><kbd class="item-tag">tut</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/responder/">Snagging creds /w Responder.py</a></h4>
+    <h5>January 28, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/netsec"><kbd class="item-tag">netsec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/networking"><kbd class="item-tag">networking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/responder"><kbd class="item-tag">responder</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/car-hacking/">Car hacking: Replay attack /w SDR</a></h4>
+    <h5>January 28, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/car-hacking"><kbd class="item-tag">car hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "oriblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

