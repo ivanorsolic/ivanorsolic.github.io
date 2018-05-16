@@ -165,11 +165,11 @@
 
 <h3 id="reciever">Reciever</h3>
 
-<p><img src="/img/prijemnik.png#center" alt="" /></p>
+<p><img src="/img/prijemnik-min.png#center" alt="" /></p>
 
 <h3 id="transmitter">Transmitter</h3>
 
-<p><img src="/img/odasiljac.png#center" alt="" /></p>
+<p><img src="/img/odasiljac-min.png#center" alt="" /></p>
 
 <p>Due to technical limitations, an ideal SDR is impossible to implement, which means that most receivers in practice have a mixer<sup class="footnote-ref" id="fnref:Mixer"><a href="#fn:Mixer">5</a></sup>, local oscillator<sup class="footnote-ref" id="fnref:LO"><a href="#fn:LO">6</a></sup> and a signal filter<sup class="footnote-ref" id="fnref:SF"><a href="#fn:SF">7</a></sup> with whom we get intermediate frequency<sup class="footnote-ref" id="fnref:IF"><a href="#fn:IF">8</a></sup> signal which is then converted into digital signal.</p>
 
@@ -220,27 +220,27 @@
 
 <h1 id="hackrf-one">HackRF One</h1>
 
-<p><img src="/img/hackrf.jpg#center" alt="" /></p>
+<p><img src="/img/hackrf-min.jpg#center" alt="" /></p>
 
 <p><a href="https://greatscottgadgets.com/hackrf/">HackRF One</a> is a SDR device which can transmit and receive radio signals in the range of 1 MHz up to 6 GHz. It was designed to enable test and development of modern and next generation radio technologies. It&rsquo;s an open source hardware platform that can be used as a USB peripheral or programmed for stand-alone operation.</p>
 
 <h1 id="rtl2832">RTL2832</h1>
 
-<p><img src="/img/rtl2832.jpg#center" alt="" /></p>
+<p><img src="/img/rtl2832-min.jpg#center" alt="" /></p>
 
 <p><a href="https://www.alibaba.com/product-detail/Latest-DVB-T-MPEG4-USB-TV_657951957.html">RTL2832</a> is a SDR device which can transmit and receive radio signals in the range of 24 MHz up to 1766 MHz (1850 MHz with experimental drivers). Although it was designed to enable viewing of DVB-T TV channels, and listening of FM/AM radio stations, since it can be used for various frequencies and channels all over Europe, we can use it as an SDR with whom we can receive and transmit radio waves using FOSS.</p>
 
-<p><img src="/img/rtl2832diss.jpg#center" alt="" /></p>
+<p><img src="/img/rtl2832diss-min.jpg#center" alt="" /></p>
 
-<p><img src="/img/realtek.jpg#center" alt="" /></p>
+<p><img src="/img/realtek-min.jpg#center" alt="" /></p>
 
-<p><img src="/img/dvbtuner.jpg#center" alt="" /></p>
+<p><img src="/img/dvbtuner-min.jpg#center" alt="" /></p>
 
 <p>Disassembling the DVB-T Tuner we can confirm that it uses the Realtek <a href="http://www.realtek.com.tw/products/productsView.aspx?Langid=1&amp;PFid=35&amp;Level=4&amp;Conn=3&amp;ProdID=257">RTL2832U DVB-T</a> COFDM demodulator, alongside the <a href="http://radioaficion.com/cms/r820t-rafael-micro/">Rafael Micro R820T/2</a> tuner.</p>
 
 <h1 id="axil-an0256l">Axil AN0256L</h1>
 
-<p><img src="/img/antena.jpg#center" alt="" />
+<p><img src="/img/antena-min.jpg#center" alt="" />
 <a href="http://engelaxil.hr/proizvodi/antenska-oprema/sobne-antene/axil-tvfm-36db-sobna-antena-c-26/">Axil AN0256L</a> is an active room antenna with an amplifier and a coax connector which was used along with the RTL2832 receiver. The antenna has built-in LTE protection, so the user cannot interfere with the channels reserved for mobile broadband services (channels 61-69). The antenna frequency ranges from 40 to 862 MHz, and the output impedance is 75 Ω.</p>
 
 <h1 id="hdsdr">HDSDR</h1>
@@ -261,7 +261,7 @@
 
 <p>The gain on the RTL2832 receiver was set to +16.5 dB, while the active antenna gain was set to around 50%. These values were discovered by trial and error, and may differ between devices.</p>
 
-<p><img src="/img/hdsdr1.png#center" alt="" /></p>
+<p><img src="/img/hdsdr1-min.png#center" alt="" /></p>
 
 <p>There is a visible change in the monitor VGA cable radiation emissions in the next picture, caused by changing displayed pictures on screen.</p>
 
@@ -269,7 +269,7 @@
 
 <p>By incrementally scanning the wavelengths ranging from 200 MHz to 800 MHz, a correlation was discovered between the change of unintentional emissions and the picture change on the monitor, between the range of 332 MHz and 333 MHz, with the interval peaks frequency being 600 KHz.</p>
 
-<p><img src="/img/hdsdr2.png#center" alt="" /></p>
+<p><img src="/img/hdsdr2-min.png#center" alt="" /></p>
 
 <h1 id="tempestsdr">TempestSDR</h1>
 
@@ -287,9 +287,9 @@
 
 <p>Using the TempestSDR toolkit, and the frequency range discovered using HDSDR, we will attempt to reconstruct the checkerboard pattern image from the monitor using unintentional emissions coming from the VGA cable which is connected to the monitor from the GPU.</p>
 
-<p><img src="/img/monitor.jpg#center" alt="" /></p>
+<p><img src="/img/monitor-min.jpg#center" alt="" /></p>
 
-<p><img src="/img/tempest1.png#center" alt="" /></p>
+<p><img src="/img/tempest1-min.png#center" alt="" /></p>
 
 <p>We can see that the reconstruction is partially missing on the picture above, in the upper left corner, and that it&rsquo;s &ldquo;travelling&rdquo; from the left to the right.</p>
 
