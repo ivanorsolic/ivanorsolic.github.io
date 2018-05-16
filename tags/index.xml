@@ -6,35 +6,53 @@
     <description>Recent content in Tags on Ori&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Jan 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivanorsolic.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Bootstrap</title>
-      <link>https://ivanorsolic.github.io/tags/bootstrap/</link>
+      <title>.Net</title>
+      <link>https://ivanorsolic.github.io/tags/.net/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/tags/bootstrap/</guid>
+      <guid>https://ivanorsolic.github.io/tags/.net/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Css</title>
-      <link>https://ivanorsolic.github.io/tags/css/</link>
+      <title>Ai</title>
+      <link>https://ivanorsolic.github.io/tags/ai/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/tags/css/</guid>
+      <guid>https://ivanorsolic.github.io/tags/ai/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Development</title>
-      <link>https://ivanorsolic.github.io/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Android</title>
+      <link>https://ivanorsolic.github.io/tags/android/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/tags/development/</guid>
+      <guid>https://ivanorsolic.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://ivanorsolic.github.io/tags/c/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://ivanorsolic.github.io/tags/c#/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/c#/</guid>
       <description></description>
     </item>
     
@@ -48,6 +66,15 @@
     </item>
     
     <item>
+      <title>For Fun</title>
+      <link>https://ivanorsolic.github.io/tags/for-fun/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/for-fun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gamedev</title>
       <link>https://ivanorsolic.github.io/tags/gamedev/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -57,56 +84,38 @@
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://ivanorsolic.github.io/tags/go/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://ivanorsolic.github.io/tags/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Highlight Js</title>
-      <link>https://ivanorsolic.github.io/tags/highlight-js/</link>
+      <title>Hackmd</title>
+      <link>https://ivanorsolic.github.io/tags/hackmd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/tags/highlight-js/</guid>
+      <guid>https://ivanorsolic.github.io/tags/hackmd/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Html</title>
-      <link>https://ivanorsolic.github.io/tags/html/</link>
+      <title>Hacktoberfest</title>
+      <link>https://ivanorsolic.github.io/tags/hacktoberfest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://ivanorsolic.github.io/tags/hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/hugo/</guid>
+      <guid>https://ivanorsolic.github.io/tags/hacktoberfest/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Infosec</title>
       <link>https://ivanorsolic.github.io/tags/infosec/</link>
-      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/infosec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iot</title>
+      <link>https://ivanorsolic.github.io/tags/iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/iot/</guid>
       <description></description>
     </item>
     
@@ -116,15 +125,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jekyll</title>
-      <link>https://ivanorsolic.github.io/tags/jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/jekyll/</guid>
       <description></description>
     </item>
     
@@ -147,6 +147,42 @@
     </item>
     
     <item>
+      <title>Math</title>
+      <link>https://ivanorsolic.github.io/tags/math/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microjs</title>
+      <link>https://ivanorsolic.github.io/tags/microjs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/microjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ml</title>
+      <link>https://ivanorsolic.github.io/tags/ml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>https://ivanorsolic.github.io/tags/mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Netsec</title>
       <link>https://ivanorsolic.github.io/tags/netsec/</link>
       <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
@@ -161,6 +197,24 @@
       <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ocr</title>
+      <link>https://ivanorsolic.github.io/tags/ocr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/ocr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pull Request</title>
+      <link>https://ivanorsolic.github.io/tags/pull-request/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/pull-request/</guid>
       <description></description>
     </item>
     
@@ -183,65 +237,38 @@
     </item>
     
     <item>
-      <title>Responsive</title>
-      <link>https://ivanorsolic.github.io/tags/responsive/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/responsive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Sdr</title>
       <link>https://ivanorsolic.github.io/tags/sdr/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/sdr/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Static Site Generator</title>
-      <link>https://ivanorsolic.github.io/tags/static-site-generator/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/static-site-generator/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://ivanorsolic.github.io/tags/syntax-highlighting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/syntax-highlighting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Template</title>
-      <link>https://ivanorsolic.github.io/tags/template/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/template/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Themes</title>
-      <link>https://ivanorsolic.github.io/tags/themes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/tags/themes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Tut</title>
       <link>https://ivanorsolic.github.io/tags/tut/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/tut/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>https://ivanorsolic.github.io/tags/twitter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vr</title>
+      <link>https://ivanorsolic.github.io/tags/vr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/vr/</guid>
       <description></description>
     </item>
     

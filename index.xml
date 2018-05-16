@@ -6,7 +6,7 @@
     <description>Recent content on Ori&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivanorsolic.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -21,30 +21,86 @@
     </item>
     
     <item>
-      <title>Project 2</title>
-      <link>https://ivanorsolic.github.io/project/project2/</link>
+      <title>Volunteering.Today</title>
+      <link>https://ivanorsolic.github.io/project/volunteeringtoday/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/project/project2/</guid>
+      <guid>https://ivanorsolic.github.io/project/volunteeringtoday/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Project 3</title>
-      <link>https://ivanorsolic.github.io/project/project3/</link>
+      <title>Athena</title>
+      <link>https://ivanorsolic.github.io/project/athena/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/project/project3/</guid>
+      <guid>https://ivanorsolic.github.io/project/athena/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Project 4</title>
-      <link>https://ivanorsolic.github.io/project/project4/</link>
+      <title>SwitchЯ</title>
+      <link>https://ivanorsolic.github.io/project/switchr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/project/project4/</guid>
+      <guid>https://ivanorsolic.github.io/project/switchr/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>MLHPrime T.I.M.</title>
+      <link>https://ivanorsolic.github.io/project/mlhprime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/mlhprime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SHT1x Arduino Mongoose</title>
+      <link>https://ivanorsolic.github.io/project/arduino-sht1x/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/arduino-sht1x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HackMD Croatian PR</title>
+      <link>https://ivanorsolic.github.io/project/hackmd-croatian-pr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/hackmd-croatian-pr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rails Admin Croatian PR</title>
+      <link>https://ivanorsolic.github.io/project/rails-admin-croatian-pr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/rails-admin-croatian-pr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ray Tracing Mathematical library</title>
+      <link>https://ivanorsolic.github.io/project/mathematical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/mathematical/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tempest attacks using a DVB-T stick</title>
+      <link>https://ivanorsolic.github.io/post/tempest/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/post/tempest/</guid>
+      <description>SDR The Wiki defines SDR as:1
+Software-defined radio (SDR) is a radio communication system where components that have been traditionally implemented in hardware (e.g. mixers, filters, amplifiers, modulators/demodulators, detectors, etc.) are instead implemented by means of software on a personal computer or embedded system.
+An ideal SDR receiver consists of an antenna, ADC2 attached to that antenna, a DSP3 which reads the output of the converter and some software which processes the output based on the users&amp;rsquo; need.</description>
     </item>
     
     <item>
@@ -55,51 +111,6 @@
       <guid>https://ivanorsolic.github.io/post/2017-01-28-snagging-creds-w-responder.py/</guid>
       <description>Snagging credentials Image taken from: DashlaneThis tutorial will go through stealing credentials from a fully locked, fully patched (at the time of writing) Windows, Mac OS X or Linux machine.
 Since the time of writing, the attack has become very well documented on the internet, and patches were released from OS manufacturers such as Microsoft1. Unfortunately, even after testing the attack on a Windows 10 PC with the newest patches, it was still successful.</description>
-    </item>
-    
-    <item>
-      <title>Tempest attacks using a DVB-T stick</title>
-      <link>https://ivanorsolic.github.io/post/tempest/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/post/tempest/</guid>
-      <description>SDR Software-defined radio je koncept u kojem je RF komunikacija u obliku procesiranja signala postignuta softverskim putem umjesto klasičnog hardverskog. Software-defined radio, kao sam uređaj, je RF komunikacijski sistem koji implementira taj softver u svrhu procesiranja signala. Takav uređaj sposoban je primati i odašiljati radiovalove isključivo na temelju korištenog softvera.
-Idealni SDR prijemnik sastoji se od antene, AD konvertera spojenog na antenu, procesora digitalnog signala (DSP) koji čita izlaz konvertera te softvera koji bi to dalje obrađivao prema potrebi korisnika.</description>
-    </item>
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://ivanorsolic.github.io/post/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/post/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://ivanorsolic.github.io/post/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/post/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
-    </item>
-    
-    <item>
-      <title>Migrate from Jekyll</title>
-      <link>https://ivanorsolic.github.io/post/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/post/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
-▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
     
   </channel>

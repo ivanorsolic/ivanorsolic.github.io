@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Ori&#39;s blog</title>
+    <link>https://ivanorsolic.github.io/tags/c#/</link>
+    <description>Recent content in C# on Ori&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://ivanorsolic.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MLHPrime T.I.M.</title>
+      <link>https://ivanorsolic.github.io/project/mlhprime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/mlhprime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SwitchЯ</title>
+      <link>https://ivanorsolic.github.io/project/switchr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/switchr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Volunteering.Today</title>
+      <link>https://ivanorsolic.github.io/project/volunteeringtoday/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/volunteeringtoday/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

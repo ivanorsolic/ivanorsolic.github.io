@@ -20,29 +20,74 @@
     </item>
     
     <item>
-      <title>Project 2</title>
-      <link>https://ivanorsolic.github.io/project/project2/</link>
+      <title>Volunteering.Today</title>
+      <link>https://ivanorsolic.github.io/project/volunteeringtoday/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/project/project2/</guid>
+      <guid>https://ivanorsolic.github.io/project/volunteeringtoday/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Project 3</title>
-      <link>https://ivanorsolic.github.io/project/project3/</link>
+      <title>Athena</title>
+      <link>https://ivanorsolic.github.io/project/athena/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/project/project3/</guid>
+      <guid>https://ivanorsolic.github.io/project/athena/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Project 4</title>
-      <link>https://ivanorsolic.github.io/project/project4/</link>
+      <title>SwitchЯ</title>
+      <link>https://ivanorsolic.github.io/project/switchr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ivanorsolic.github.io/project/project4/</guid>
+      <guid>https://ivanorsolic.github.io/project/switchr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MLHPrime T.I.M.</title>
+      <link>https://ivanorsolic.github.io/project/mlhprime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/mlhprime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SHT1x Arduino Mongoose</title>
+      <link>https://ivanorsolic.github.io/project/arduino-sht1x/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/arduino-sht1x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HackMD Croatian PR</title>
+      <link>https://ivanorsolic.github.io/project/hackmd-croatian-pr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/hackmd-croatian-pr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rails Admin Croatian PR</title>
+      <link>https://ivanorsolic.github.io/project/rails-admin-croatian-pr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/rails-admin-croatian-pr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ray Tracing Mathematical library</title>
+      <link>https://ivanorsolic.github.io/project/mathematical/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/project/mathematical/</guid>
       <description></description>
     </item>
     

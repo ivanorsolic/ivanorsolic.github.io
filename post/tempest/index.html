@@ -139,7 +139,7 @@
     
 
     <h4><a href="/post/tempest/">Tempest attacks using a DVB-T stick</a></h4>
-    <h5>September 28, 2014</h5>
+    <h5>February 6, 2018</h5>
     
     <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
     
@@ -155,109 +155,119 @@
 
 <h1 id="sdr">SDR</h1>
 
-<p>Software-defined radio je koncept u kojem je RF komunikacija u obliku procesiranja signala postignuta softverskim putem umjesto klasičnog hardverskog. Software-defined radio, kao sam uređaj, je RF komunikacijski sistem koji implementira taj softver u svrhu procesiranja signala. Takav uređaj sposoban je primati i odašiljati radiovalove isključivo na temelju korištenog softvera.</p>
+<p><a href="https://www.wikiwand.com/en/Software-defined_radio"><strong>The Wiki defines SDR as:</strong></a><sup class="footnote-ref" id="fnref:SDR"><a href="#fn:SDR">1</a></sup></p>
 
-<p>Idealni SDR prijemnik sastoji se od antene, AD konvertera spojenog na antenu, procesora digitalnog signala (DSP) koji čita izlaz konvertera te softvera koji bi to dalje obrađivao prema potrebi korisnika. U slučaju odašiljača proces je obrnut, DSP generira niz podataka koji se šalju DA konverteru koji je spojen na antenu.</p>
+<p><strong>Software-defined radio (SDR)</strong> is a radio communication system where components that have been traditionally implemented in hardware (e.g. mixers, filters, amplifiers, modulators/demodulators, detectors, etc.) are instead implemented by means of software on a personal computer or embedded system.</p>
 
-<h3 id="prijemnik">Prijemnik</h3>
+<p>An ideal SDR <strong>receiver</strong> consists of an <strong>antenna</strong>, <strong>ADC<sup class="footnote-ref" id="fnref:ADC"><a href="#fn:ADC">2</a></sup></strong> attached to that antenna, a <strong>DSP<sup class="footnote-ref" id="fnref:DSP"><a href="#fn:DSP">3</a></sup></strong> which reads the output of the converter and some <strong>software</strong> which processes the output based on the users&rsquo; need.</p>
+
+<p>In case of a <strong>transmitter</strong>, the process is the same, but just in reverse. The <strong>DSP</strong> generates a series of data which is then sent to a <strong>DAC<sup class="footnote-ref" id="fnref:DAC"><a href="#fn:DAC">4</a></sup></strong> connected to the <strong>antenna</strong>.</p>
+
+<h3 id="reciever">Reciever</h3>
 
 <p><img src="/img/prijemnik.png#center" alt="" /></p>
 
-<h3 id="odašiljač">Odašiljač</h3>
+<h3 id="transmitter">Transmitter</h3>
 
 <p><img src="/img/odasiljac.png#center" alt="" /></p>
 
-<p>Zbog tehnoloških ograničenja idealni SDR je neizvediv, te zbog toga većina prijemnika u praksi ima miješalo, lokalni oscilator i filter signala čijim djelovanjem dobivamo međufrekvencijski signal koji se tada konvertira u digitalni signal.</p>
+<p>Due to technical limitations, an ideal SDR is impossible to implement, which means that most receivers in practice have a mixer<sup class="footnote-ref" id="fnref:Mixer"><a href="#fn:Mixer">5</a></sup>, local oscillator<sup class="footnote-ref" id="fnref:LO"><a href="#fn:LO">6</a></sup> and a signal filter<sup class="footnote-ref" id="fnref:SF"><a href="#fn:SF">7</a></sup> with whom we get intermediate frequency<sup class="footnote-ref" id="fnref:IF"><a href="#fn:IF">8</a></sup> signal which is then converted into digital signal.</p>
 
-<h1 id="povijest-sdr-a">Povijest SDR-a</h1>
+<h1 id="sdr-history">SDR History</h1>
 
-<p>Sam koncept SDR-a datira još iz 70ih godina prošlog stoljeća, često spomenut u kontekstu američkih i europskih obrambenih snaga. Unatoč razvijanju koncepta 70ih pretpostavlja se da je prvi SDR konstruiran 1988. godine od strane njemačkih inženjera Petra Hoehera  i Helmutha Langa u njemačkom centru za zračno-kosmički prostor.</p>
+<p>The concept of SDR dates back to the 70s, often mentioned in the context of US and European defense forces. Despite the concepts being developed back in the 70s, it is believed that the first SDR was constructed in 1988. by Peter Hoeher and Helmuth Lang in the German Aerospace Research Establishment (DLR<sup class="footnote-ref" id="fnref:DLR"><a href="#fn:DLR">9</a></sup>, formerly DFLVR<sup class="footnote-ref" id="fnref:DFLVR"><a href="#fn:DFLVR">10</a></sup>).</p>
 
-<p>Jedna od prvih javnih SDR inicijativa je američki vojni projekt kodnog naziva SpeakEasy. Cilj je bio emulirati 10 vojnih radija u rasponu od 2Mhz do 2Ghz te postići komunikaciju između pješadije, mornarice, zrakoplovnih snaga i satelita. Nekoliko godina kasnije prerađena verzija SpeakEasy sustava postaje JTRS (Joint Tactical Radio System) koji je danas u upotrebi američke vojske.</p>
+<p>One of the first public SDR initiatives was the US military project, code named SpeakEasy<sup class="footnote-ref" id="fnref:SpeakEasy"><a href="#fn:SpeakEasy">11</a></sup>, whose goal was to emulate 10 military radios ranging from 2 MHz to 2 GHz, and achieve communication between infantry, navy, air forces and satellites.  A couple years later, the revised SpeakEasy system becomes the Joint Tactical Radio System (JTRS<sup class="footnote-ref" id="fnref:JTRS"><a href="#fn:JTRS">12</a></sup>), in use today by the US military.</p>
 
-<h1 id="trenutna-primjena">Trenutna primjena</h1>
+<h1 id="current-use">Current use</h1>
 
-<p>SDR primarno svoju svrhu nalazi u vojsci u prethodno spomenutom projektu JTRS. Za amatersku uporabu postoje gotova SDR rješenja kao što su Zeus ZS-1, HackRF One i SoftRock SDR.
-Jeftinija alternativa SDR prijemnika su DVB-T USB prijemnici koji koriste <a href="http://superkuh.com/rtlsdr.html">Realtekov RTL2832U kontroler te Micro R820T tuner</a> koji nam omogućava raspon frekvencije od 24 do 1766MHz što pokriva veći dio UHF(Ultra High Frequency) spektra. Uz pomoć takvog prijemnika, dalje u projektu, biti će izvedena tehnička implementacija TEMPEST napada.</p>
+<p>SDR primarily finds its use in the military, like in the previously mentioned JTRS project. For amateur use there are commercial SDR solutions available, such as the Zeus ZS-1<sup class="footnote-ref" id="fnref:Zeus"><a href="#fn:Zeus">13</a></sup>, HackRF One and the SoftRock SDR<sup class="footnote-ref" id="fnref:SoftRock"><a href="#fn:SoftRock">14</a></sup>.</p>
+
+<p>The cheaper alternative to SDR receivers being DVB-T<sup class="footnote-ref" id="fnref:DVB"><a href="#fn:DVB">15</a></sup> USB receivers, which use <a href="http://superkuh.com/rtlsdr.html">Realtek&rsquo;s RTL2832U controller, and the Micro R820T tuner</a>, which enables us to use a frequency range between 24 up to 1766 MHz, which covers most of the Ultra High Frequency (UHF<sup class="footnote-ref" id="fnref:UHF"><a href="#fn:UHF">16</a></sup>) range.</p>
+
+<p>That very receiver will be used further on in an attempted technical implementation of an TEMPEST attack.</p>
 
 <h1 id="tempest">TEMPEST</h1>
 
-<p>Telecommunications Electronics Material Protected from Emanating Spurious Transmissions ili skraćeno TEMPEST je kodni naziv za projekt američke nacionalne sigurnosne agencije (NSA) koji se odnosi na prikupljanje podataka informacijskih sustava na temelju propuštanja prilikom emanacije, a  uključuje propuštanje radiovalova, električnih signala, zvukova i vibracija. U projekt su uključene metode prikupljanja podataka od drugih te metode obrane od istih. Detalji i specifikacije projekta opisani su u klasificiranim dokumentima <a href="https://cryptome.org/jya/nacsim-5000/nacsim-5000.htm">NACSIM 5000/5100A</a>.</p>
+<p><a href="https://www.sans.org/reading-room/whitepapers/privacy/introduction-tempest-981">Telecommunications Electronics Material Protected from Emanating Spurious Transmissions</a> or TEMPEST in short is a codename for a NSA project which gathers data from information systems using emanated leaks, which include radio waves, electrical signals, sounds and vibrations. The project includes adversarial data gathering and methods of mitigating the same. The details and specifications of the project are described in the classified <a href="https://cryptome.org/jya/nacsim-5000/nacsim-5000.htm">NACSIM 5000/5100A</a> documents.</p>
 
-<h1 id="primjena">Primjena</h1>
+<h1 id="example-usage">Example usage</h1>
 
 <ul>
-<li><p><a href="Wim van Eck (1985.)">https://cryptome.org/emr.pdf</a> prisluškivanje CRT monitora s opremom u vrijednosti od 15$ i tv prijemnikom</p></li>
-
-<li><p><a href="Prisluškivanje LED indikatora na modemima">http://www.foo.be/docs-free/tempest/optical_tempest.pdf</a></p></li>
-
-<li><p><a href="Prisluškivanje radijacije pritiskanja tipki na žićnim i bežićnim tipkovnicama">https://www.blackhat.com/presentations/bh-usa-09/BARISANI/BHUSA09-Barisani-Keystrokes-SLIDES.pdf</a></p></li>
-
-<li><p><a href="AirHopper">https://arxiv.org/ftp/arxiv/papers/1411/1411.0237.pdf</a>, keylogger koji koristi radio frekvencije (FM) za slanje podataka s izoliranog računala na smartphone napadača</p></li>
-
-<li><p><a href="BitWhisper">http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=7243739</a>, napad na izolirana računala temeljen na interpretaciji fluktuacija temperature</p></li>
-
-<li><p><a href="GSMem">https://www.usenix.org/node/190937</a>, eksfiltracija podataka izoliranih računala preko GSM, UMTS I LTE frekvencija koristeći zračenje memorijske sabirnice</p></li>
+<li><a href="https://cryptome.org/emr.pdf">Electromagnetic Radiation from Video Display Units: An Eavesdropping Risk?</a></li>
+<li><a href="https://www.wikiwand.com/en/Filter_(signal_processing)">Information Leakage from Optical Emanations</a></li>
+<li><a href="https://www.blackhat.com/presentations/bh-usa-09/BARISANI/BHUSA09-Barisani-Keystrokes-SLIDES.pdf">Sniffing Keystrokes With Lasers/Voltmeters</a></li>
+<li><a href="https://arxiv.org/ftp/arxiv/papers/1411/1411.0237.pdf">AirHopper: Bridging the Air-Gap between Isolated Networks and Mobile Phones using Radio Frequencies</a></li>
+<li><a href="http://ieeexplore.ieee.org/xpls/icp.jsp?arnumber=7243739">BitWhisper: Covert Signaling Channel between Air-Gapped Computers Using Thermal Manipulations</a></li>
+<li><a href="https://www.usenix.org/node/190937">GSMem: Data Exfiltration from Air-Gapped Computers over GSM Frequencies</a></li>
 </ul>
 
-<h1 id="korištena-oprema">Korištena oprema</h1>
+<h1 id="used-gear">Used gear</h1>
 
-<p>Za izradu ovog projekta, koristili smo sljedeću opremu:</p>
+<p>For the research and implementation of this attack, the following gear was used:</p>
 
 <ul>
-<li><p>HackRF One SDR prijemnik</p></li>
+<li><p>HackRF One SDR</p></li>
 
-<li><p>RTL2832 prijemnik</p></li>
+<li><p>RTL2832 receiver</p></li>
 
 <li><p>IBM Thinkvision monitor</p></li>
 
 <li><p>NFREN 171M monitor</p></li>
 
-<li><p>Axil TV/FM 36dB sobna antena C (AN0256L)</p></li>
+<li><p>Axil TV/FM 36dB antenna C (AN0256L)</p></li>
 </ul>
 
 <h1 id="hackrf-one">HackRF One</h1>
 
 <p><img src="/img/hackrf.jpg#center" alt="" /></p>
 
-<p><a href="https://greatscottgadgets.com/hackrf/">HackRF One</a> je SDR uređaj koji može odašiljati i primati radio signale u rasponu od 1 MHz do 6 GHz. Dizajniran je kako bi omogućio testiranje i razvoj modernih i audio tehnologija sljedećih generacija. HackRF je hardverska platforma otvorenog koda koja se može koristiti kao USB periferni uređaj ili se može programirati za samostalne operacije.</p>
+<p><a href="https://greatscottgadgets.com/hackrf/">HackRF One</a> is a SDR device which can transmit and receive radio signals in the range of 1 MHz up to 6 GHz. It was designed to enable test and development of modern and next generation radio technologies. It&rsquo;s an open source hardware platform that can be used as a USB peripheral or programmed for stand-alone operation.</p>
 
 <h1 id="rtl2832">RTL2832</h1>
 
 <p><img src="/img/rtl2832.jpg#center" alt="" /></p>
 
-<p><a href="https://www.alibaba.com/product-detail/Latest-DVB-T-MPEG4-USB-TV_657951957.html">RTL2832</a> je SDR uređaj koji može odašiljati i primati radio signale u rasponu od 24MHz do 1766 MHz (1850MHz sa eksperimentalnim driverima). Iako je dizajniran kako bi korisnicima omogućio gledanje DVB-T TV kanala, te slušanje FM/AM radio stanica, budući da se može koristiti za različite frekvencije i kanale u raznim zemljama diljem Europe, možemo ga koristiti kao SDR pomoću kojega primamo i odašiljemo radio signale koristeći programsku podršku otvorenog koda.</p>
+<p><a href="https://www.alibaba.com/product-detail/Latest-DVB-T-MPEG4-USB-TV_657951957.html">RTL2832</a> is a SDR device which can transmit and receive radio signals in the range of 24 MHz up to 1766 MHz (1850 MHz with experimental drivers). Although it was designed to enable viewing of DVB-T TV channels, and listening of FM/AM radio stations, since it can be used for various frequencies and channels all over Europe, we can use it as an SDR with whom we can receive and transmit radio waves using FOSS.</p>
 
 <p><img src="/img/rtl2832diss.jpg#center" alt="" /></p>
 
-<p><img src="/img/realtek.jpg#floatleft" alt="" />
-<img src="/img/dvbtuner.jpg#floatright" alt="" /></p>
+<p><img src="/img/realtek.jpg#center" alt="" /></p>
 
-<p>Rastavljajući DVB-T Tuner možemo potvrditi da koristi Realtekov <a href="http://www.realtek.com.tw/products/productsView.aspx?Langid=1&amp;PFid=35&amp;Level=4&amp;Conn=3&amp;ProdID=257">RTL2832U DVB-T</a> COFDM demodulator, te da koristi <a href="http://radioaficion.com/cms/r820t-rafael-micro/">Rafael Micro R820T/2</a> tuner.</p>
+<p><img src="/img/dvbtuner.jpg#center" alt="" /></p>
+
+<p>Disassembling the DVB-T Tuner we can confirm that it uses the Realtek <a href="http://www.realtek.com.tw/products/productsView.aspx?Langid=1&amp;PFid=35&amp;Level=4&amp;Conn=3&amp;ProdID=257">RTL2832U DVB-T</a> COFDM demodulator, alongside the <a href="http://radioaficion.com/cms/r820t-rafael-micro/">Rafael Micro R820T/2</a> tuner.</p>
 
 <h1 id="axil-an0256l">Axil AN0256L</h1>
 
 <p><img src="/img/antena.jpg#center" alt="" />
-<a href="http://engelaxil.hr/proizvodi/antenska-oprema/sobne-antene/axil-tvfm-36db-sobna-antena-c-26/">Axil AN0256L</a> je aktivna sobna antena sa pojačivačem i koaksijalnim konektorom koju smo koristili zajedno sa RTL2832 prijemnikom.
-Antena posjeduje LTE zaštitu (od upada kanala 61-69 namjenjenih mobilnim broadband servisima). Raspon frekvencija antene je od 40 do 862 MHz, a izlazna impedancija je 75 Ω.</p>
+<a href="http://engelaxil.hr/proizvodi/antenska-oprema/sobne-antene/axil-tvfm-36db-sobna-antena-c-26/">Axil AN0256L</a> is an active room antenna with an amplifier and a coax connector which was used along with the RTL2832 receiver. The antenna has built-in LTE protection, so the user cannot interfere with the channels reserved for mobile broadband services (channels 61-69). The antenna frequency ranges from 40 to 862 MHz, and the output impedance is 75 Ω.</p>
 
 <h1 id="hdsdr">HDSDR</h1>
 
-<p>High Definition Software Defined Radio (HDSDR) je besplatni Software Defined Radio program za Microsoft Windows operacijske sustave, koji je napredna verzija Winrad-a od Alberta di Bene.
-Najčešća primjena ovog programa je slušanje radija, slušanje kratkotalasnih radio emitiranja (SWL), radio astronomija, hvatanje ne-direkcionalnih radio odašiljača (NDB hunting) te analiza čitavog radio spektra.
-U sklopu ovog projekta, HDSDR je korišten za otkrivanje frekvencija na kojima postoje nenamjerna zračenja računalnih monitora (putem kabla).</p>
+<p>High Definition Software Defined Radio (HDSDR) is a free Software Defined Radio program for Microsoft Windows, which is a more advanced version of Alberto di Bene&rsquo;s Winrad.</p>
+
+<p>The most common use for this program is listening to radio, shortwave listening (SWL), radio astronomy, NDB hunting and RF Spectrum Analysis.</p>
+
+<p>In the context of this attack, HDSDR was used to detect frequencies of unintentional computer monitor cable emissions.</p>
 
 <p><img src="/img/hdsdr.gif#center" alt="" /></p>
 
-<h1 id="postavke-hdsdr-a">Postavke HDSDR-a</h1>
+<h1 id="configuring-hdsdr">Configuring HDSDR</h1>
 
-<p>Budući da ne želimo dekodirati signal, nego ga vidjeti u sirovom obliku prilikom promjene slike na monitoru, način signala smo postavili na Continuous Wave (CW).
-Spektar koji gledamo je maksimalno udaljen, kako bi što veći raspon signala stao na ekran, te je brzina očitavanja uzoraka (Sample Rate) povećana na maksimum, kako bi sa što većom rezolucijom uočili promjenu u emisiji radio valova.
-Gain na RTL2832 prijemniku je postavljen na +16.5dB, dok je na aktivnoj anteni postavljen na cca. 50%. Ove vrijednosti su određene na temelju pokušaja i pogrešaka, te se razlikuju od uređaja do uređaja.</p>
+<p>Since we&rsquo;re not interested in decoding the signal, we can use the Continuous Wave (CW) setting, to see the raw signal while changing an image on the target monitor.</p>
+
+<p>The spectrum we&rsquo;re analyzing is zoomed out maximally, to fit the biggest possible range on the screen, and the sample rate was set to maximum, in order to see the emissions change in the highest resolution.</p>
+
+<p>The gain on the RTL2832 receiver was set to +16.5 dB, while the active antenna gain was set to around 50%. These values were discovered by trial and error, and may differ between devices.</p>
 
 <p><img src="/img/hdsdr1.png#center" alt="" /></p>
 
-<p>Na sljedećoj slici možemo vidjeti promjenu u emisiji radijacije monitora putem VGA kabla izazvanu promjenom slike na monitoru. Na monitoru je u razdoblju od 9:10:17 PM do 9:10:19 prikazan &ldquo;checkerboard&rdquo; uzorak, a u ostalim razdobljima prazan prozor web preglednika. # Inkrementalno skenirajući raspon valnih duljina od 200 MHz do 800 MHz, na frekvenciji između 332 MHz do 333 MHz uočena je korelacija promjene nenamjernih emisija radiovalova sa promjenom prikazane slike na monitoru, sa vrhovima udaljenima u intervalima od 600 KHz.</p>
+<p>There is a visible change in the monitor VGA cable radiation emissions in the next picture, caused by changing displayed pictures on screen.</p>
+
+<p>During the time period between 9:10:17 PM to 9:10:19, the monitor was showing a checkerboard pattern, while the rest of the time it was showing an empty browser screen.</p>
+
+<p>By incrementally scanning the wavelengths ranging from 200 MHz to 800 MHz, a correlation was discovered between the change of unintentional emissions and the picture change on the monitor, between the range of 332 MHz and 333 MHz, with the interval peaks frequency being 600 KHz.</p>
 
 <p><img src="/img/hdsdr2.png#center" alt="" /></p>
 
@@ -265,24 +275,72 @@ Gain na RTL2832 prijemniku je postavljen na +16.5dB, dok je na aktivnoj anteni p
 
 <p><img src="/img/tempest.gif#center" alt="" /></p>
 
-<p><a href="https://github.com/martinmarinov/TempestSDR">TempestSDR</a> je software toolkit za udaljeno prisluškivanje monitora koristeći SDR prijemnik. Rasterski video se prenosi putem kabla povezanog na monitor, jednu po jednu liniju piksela, enkodiranu kao izmjenični napon. Taj napon generira elektromagnetske valove koje SDR prijemnik može „pokupiti“. Ovaj software mapira jačinu primljenog polja piksela na nijansu sivog tona u realnom vremenu. To stvara lažnu procjenu boje originalnog video signala.</p>
+<p><a href="https://github.com/martinmarinov/TempestSDR">TempestSDR Repo says that it:</a></p>
 
-<p>Ovaj toolkit koristi komercijalno dostupne SDR prijemnike koje je veoma lako pribaviti te primijeniti bez mnogo prethodnog znanja o ovoj vrsti napada. Sve parametre poput rezolucije i frekvencije osvježivanja slike je moguće procijeniti pomoću softvera.</p>
+<p>&hellip; is a software toolkit for remotely eavesdropping video monitors using a Software Defined Radio (SDR) receiver. It exploits compromising emanations from cables carrying video signals.</p>
 
-<h1 id="izvođenje-napada">Izvođenje napada</h1>
+<p>Raster video is usually transmitted one line of pixels at a time, encoded as a varying current. This generates an electromagnetic wave that can be picked up by an SDR receiver. The software maps the received field strength of a pixel to a gray-scale shade in real-time. This forms a false colour estimate of the original video signal.</p>
 
-<p>Koristeći TempestSDR alat, te ranije otkrivenu frekvenciju koristeći HDSDR, pokušati ćemo rekonstruirati sljedeću sliku sa monitora koristeći nenamjerne emisije koje dolaze iz VGA kabla kojim je monitor spojen na računalo.</p>
+<p>The toolkit uses unmodified off-the-shelf hardware which lowers the costs and increases mobility compared to existing solutions. It allows for additional post-processing which improves the signal-to-noise ratio. The attacker does not need to have prior knowledge about the target video display. All parameters such as resolution and refresh rate are estimated with the aid of the software.</p>
+
+<h1 id="implementing-the-attack">Implementing the attack</h1>
+
+<p>Using the TempestSDR toolkit, and the frequency range discovered using HDSDR, we will attempt to reconstruct the checkerboard pattern image from the monitor using unintentional emissions coming from the VGA cable which is connected to the monitor from the GPU.</p>
 
 <p><img src="/img/monitor.jpg#center" alt="" /></p>
 
 <p><img src="/img/tempest1.png#center" alt="" /></p>
 
-<p>Na slici iznad možemo vidjeti kako je rekonstrukcija djelomično nepotpuna u gornjem lijevom kutu, te da u određenoj količini &ldquo;putuje&rdquo; slijeva na desno. Razlog tomu je netočno podešen FPS (odnosno refresh rate) te loša prijemnik. Budući da monitor prikazuje sliku u rezoluciji 1280x1024, brzinom od 75Hz, sa dubinom boje od 24 bita, možemo pretpostaviti da će se &ldquo;najbolje&rdquo; zračenje nalaziti na frekvenciji od 2.359 GHz (1280x1024x75x24 = 2359296000 Hz), ali RTL2832 nažalost ne podržava frekvencije iznad 2GHz. Druga najbolja odluka se nalazila na 332-333 GHz, te zbog lošije antene i postojanja šuma uzrokuje šetanje slike koje vidimo na slici iznad.</p>
+<p>We can see that the reconstruction is partially missing on the picture above, in the upper left corner, and that it&rsquo;s &ldquo;travelling&rdquo; from the left to the right.</p>
 
-<h1 id="video">Video</h1>
+<p>The reason being an incorrectly set refresh rate, since the receiver cannot provide a sample rate high enough at that frequency for the image to be reconstructed.</p>
 
-<p><a href="http://www.youtube.com/watch?v=Ko7t8iYCyAk"><img src="http://img.youtube.com/vi/Ko7t8iYCyAk/0.jpg#center" alt="HDSDR traženje frekvencije nenamjernih emisija" /></a>
-<a href="http://www.youtube.com/watch?v=0ynSjI8l49M"><img src="http://img.youtube.com/vi/Ko7t8iYCyAk/0.jpg#center" alt="TempestSDR napad" /></a></p>
+<p>Since the monitor is showing a 1280x1024 picture, with a refresh rate of 75Hz, with a color depth of 24 bits, we can assume that the highest quality reconstruction of the image would be possible on the frequency of 2.359 GHz (1280x1024x75x24 = 2359296000 Hz), which, sadly, isn&rsquo;t supported by the RTL2832 which doesn&rsquo;t come near 2 GHz. The second best reconstruction was found at 332-333 MHz, which was less good due to a very cheap antenna and some noise, which caused the &ldquo;traveling&rdquo; of the image, described above.</p>
+
+<h1 id="poc-didn-t-happen">PoC || Didn&rsquo;t happen</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ko7t8iYCyAk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0ynSjI8l49M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:SDR"><a href="https://www.wikiwand.com/en/Software-defined_radio">SDR</a>
+ <a class="footnote-return" href="#fnref:SDR"><sup>[return]</sup></a></li>
+<li id="fn:ADC"><a href="https://www.wikiwand.com/en/Analog-to-digital_converter">ADC</a>
+ <a class="footnote-return" href="#fnref:ADC"><sup>[return]</sup></a></li>
+<li id="fn:DSP"><a href="https://www.wikiwand.com/en/Digital_signal_processor">DSP</a>
+ <a class="footnote-return" href="#fnref:DSP"><sup>[return]</sup></a></li>
+<li id="fn:DAC"><a href="https://www.wikiwand.com/en/Digital-to-analog_converter">DAC</a>
+ <a class="footnote-return" href="#fnref:DAC"><sup>[return]</sup></a></li>
+<li id="fn:Mixer"><a href="https://www.wikiwand.com/en/Frequency_mixer">Mixer</a>
+ <a class="footnote-return" href="#fnref:Mixer"><sup>[return]</sup></a></li>
+<li id="fn:LO"><a href="https://www.wikiwand.com/en/Local_oscillator">LO</a>
+ <a class="footnote-return" href="#fnref:LO"><sup>[return]</sup></a></li>
+<li id="fn:SF"><a href="https://www.wikiwand.com/en/Filter_(signal_processing)">Filter</a>
+ <a class="footnote-return" href="#fnref:SF"><sup>[return]</sup></a></li>
+<li id="fn:IF"><a href="https://www.wikiwand.com/en/Intermediate_frequency">IF</a>
+ <a class="footnote-return" href="#fnref:IF"><sup>[return]</sup></a></li>
+<li id="fn:DLR"><a href="https://www.wikiwand.com/en/German_Aerospace_Center">DLR</a>
+ <a class="footnote-return" href="#fnref:DLR"><sup>[return]</sup></a></li>
+<li id="fn:DFLVR"><a href="https://www.wikiwand.com/en/German_Aerospace_Center">DFLVR</a>
+ <a class="footnote-return" href="#fnref:DFLVR"><sup>[return]</sup></a></li>
+<li id="fn:SpeakEasy"><a href="https://www.wikiwand.com/en/SpeakEasy">SpeakEasy</a>
+ <a class="footnote-return" href="#fnref:SpeakEasy"><sup>[return]</sup></a></li>
+<li id="fn:JTRS"><a href="https://www.wikiwand.com/en/Joint_Tactical_Radio_System">JTRS</a>
+ <a class="footnote-return" href="#fnref:JTRS"><sup>[return]</sup></a></li>
+<li id="fn:Zeus"><a href="http://www.ssbusa.com/ZEUSWEB.html">Zeus ZS-1</a>
+ <a class="footnote-return" href="#fnref:Zeus"><sup>[return]</sup></a></li>
+<li id="fn:SoftRock"><a href="http://www.softrockradio.org/">SoftRock SDR</a>
+ <a class="footnote-return" href="#fnref:SoftRock"><sup>[return]</sup></a></li>
+<li id="fn:DVB"><a href="https://www.wikiwand.com/en/DVB-T">DVB-T</a>
+ <a class="footnote-return" href="#fnref:DVB"><sup>[return]</sup></a></li>
+<li id="fn:UHF"><a href="https://www.wikiwand.com/en/Ultra_high_frequency">UHF</a>
+ <a class="footnote-return" href="#fnref:UHF"><sup>[return]</sup></a></li>
+</ol>
+</div>
 </div>
 
     

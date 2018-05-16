@@ -7,15 +7,40 @@
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/project/project2/</loc>
+    <loc>https://ivanorsolic.github.io/project/volunteeringtoday/</loc>
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/project/project3/</loc>
+    <loc>https://ivanorsolic.github.io/project/athena/</loc>
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/project/project4/</loc>
+    <loc>https://ivanorsolic.github.io/project/switchr/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/project/mlhprime/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/project/arduino-sht1x/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/project/hackmd-croatian-pr/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/project/rails-admin-croatian-pr/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/project/mathematical/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/post/tempest/</loc>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,43 +49,32 @@
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/post/tempest/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>https://ivanorsolic.github.io/tags/.net/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/post/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://ivanorsolic.github.io/tags/ai/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/post/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://ivanorsolic.github.io/tags/android/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/post/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <loc>https://ivanorsolic.github.io/tags/c/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/tags/bootstrap/</loc>
+    <loc>https://ivanorsolic.github.io/tags/c#/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/css/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -71,52 +85,38 @@
   </url>
   
   <url>
+    <loc>https://ivanorsolic.github.io/tags/for-fun/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ivanorsolic.github.io/tags/gamedev/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://ivanorsolic.github.io/tags/hackmd/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/highlight-js/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/html/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://ivanorsolic.github.io/tags/hacktoberfest/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/infosec/</loc>
-    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/iot/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/java/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -127,6 +127,26 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/lwjgl/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/math/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/microjs/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/ml/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/mysql/</loc>
     <priority>0</priority>
   </url>
   
@@ -143,19 +163,29 @@
   </url>
   
   <url>
+    <loc>https://ivanorsolic.github.io/tags/ocr/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ivanorsolic.github.io/</loc>
-    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/post/</loc>
-    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/project/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/pull-request/</loc>
     <priority>0</priority>
   </url>
   
@@ -172,48 +202,30 @@
   </url>
   
   <url>
-    <loc>https://ivanorsolic.github.io/tags/responsive/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ivanorsolic.github.io/tags/sdr/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/static-site-generator/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/syntax-highlighting/</loc>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/template/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivanorsolic.github.io/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/tut/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/twitter/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/vr/</loc>
     <priority>0</priority>
   </url>
   
