@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ocr on Ori&#39;s blog</title>
-    <link>https://ivanorsolic.github.io/tags/ocr/</link>
-    <description>Recent content in Ocr on Ori&#39;s blog</description>
+    <title>Hackathon on Ori&#39;s blog</title>
+    <link>https://ivanorsolic.github.io/tags/hackathon/</link>
+    <description>Recent content in Hackathon on Ori&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ivanorsolic.github.io/tags/ocr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ivanorsolic.github.io/tags/hackathon/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Volunteering.Today</title>
-      <link>https://ivanorsolic.github.io/project/volunteeringtoday/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/project/volunteeringtoday/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>AI and OCR: Volunteering.today</title>

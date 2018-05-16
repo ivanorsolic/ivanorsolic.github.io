@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sdr on Ori&#39;s blog</title>
-    <link>https://ivanorsolic.github.io/tags/sdr/</link>
-    <description>Recent content in Sdr on Ori&#39;s blog</description>
+    <title>Tempest on Ori&#39;s blog</title>
+    <link>https://ivanorsolic.github.io/tags/tempest/</link>
+    <description>Recent content in Tempest on Ori&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ivanorsolic.github.io/tags/sdr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ivanorsolic.github.io/tags/tempest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,19 +20,6 @@
       <description>SDR The Wiki defines SDR as:1
 Software-defined radio (SDR) is a radio communication system where components that have been traditionally implemented in hardware (e.g. mixers, filters, amplifiers, modulators/demodulators, detectors, etc.) are instead implemented by means of software on a personal computer or embedded system.
 An ideal SDR receiver consists of an antenna, ADC2 attached to that antenna, a DSP3 which reads the output of the converter and some software which processes the output based on the users&amp;rsquo; need.</description>
-    </item>
-    
-    <item>
-      <title>Car hacking tutorial: Replay attack /w SDR</title>
-      <link>https://ivanorsolic.github.io/post/car-hacking/</link>
-      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/post/car-hacking/</guid>
-      <description>Replay attacks Image taken from: NullBytesIf you want to find out what SDR is, check out my other post:
-Tempest attacks
-Remote keyless systems Wiki defines RKS as:
- The term remote keyless system (RKS), also called keyless entry or remote central locking, refers to a lock that uses an electronic remote control as a key which is activated by a handheld device or automatically by proximity.
- As we all well know, today&amp;rsquo;s cars all have keys that can remotely unlock your car with the push of a button.</description>
     </item>
     
   </channel>

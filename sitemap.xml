@@ -80,6 +80,7 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/ai/</loc>
+    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -95,12 +96,13 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/c#/</loc>
+    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/car-hacking/</loc>
-    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -111,7 +113,7 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/embedded/</loc>
-    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -122,6 +124,12 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/gamedev/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/hackathon/</loc>
+    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -143,7 +151,7 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/infosec/</loc>
-    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -179,6 +187,7 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/ml/</loc>
+    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -201,6 +210,7 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/ocr/</loc>
+    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -246,13 +256,19 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/sdr/</loc>
-    <lastmod>2018-04-21T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/</loc>
     <lastmod>2018-04-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/tempest/</loc>
+    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

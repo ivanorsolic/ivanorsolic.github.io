@@ -23,7 +23,7 @@
     <item>
       <title>Ai</title>
       <link>https://ivanorsolic.github.io/tags/ai/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/ai/</guid>
       <description></description>
@@ -50,7 +50,7 @@
     <item>
       <title>C#</title>
       <link>https://ivanorsolic.github.io/tags/c#/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/c#/</guid>
       <description></description>
@@ -59,7 +59,7 @@
     <item>
       <title>Car Hacking</title>
       <link>https://ivanorsolic.github.io/tags/car-hacking/</link>
-      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/car-hacking/</guid>
       <description></description>
@@ -68,7 +68,7 @@
     <item>
       <title>Embedded</title>
       <link>https://ivanorsolic.github.io/tags/embedded/</link>
-      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/embedded/</guid>
       <description></description>
@@ -89,6 +89,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/gamedev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hackathon</title>
+      <link>https://ivanorsolic.github.io/tags/hackathon/</link>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/hackathon/</guid>
       <description></description>
     </item>
     
@@ -122,7 +131,7 @@
     <item>
       <title>Infosec</title>
       <link>https://ivanorsolic.github.io/tags/infosec/</link>
-      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/infosec/</guid>
       <description></description>
@@ -185,7 +194,7 @@
     <item>
       <title>Ml</title>
       <link>https://ivanorsolic.github.io/tags/ml/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/ml/</guid>
       <description></description>
@@ -221,7 +230,7 @@
     <item>
       <title>Ocr</title>
       <link>https://ivanorsolic.github.io/tags/ocr/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/ocr/</guid>
       <description></description>
@@ -266,9 +275,18 @@
     <item>
       <title>Sdr</title>
       <link>https://ivanorsolic.github.io/tags/sdr/</link>
-      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/tags/sdr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tempest</title>
+      <link>https://ivanorsolic.github.io/tags/tempest/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/tags/tempest/</guid>
       <description></description>
     </item>
     

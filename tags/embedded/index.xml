@@ -6,7 +6,7 @@
     <description>Recent content in Embedded on Ori&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivanorsolic.github.io/tags/embedded/index.xml" rel="self" type="application/rss+xml" />
     
@@ -18,17 +18,6 @@
       
       <guid>https://ivanorsolic.github.io/project/athena/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>AI and OCR: Volunteering.today</title>
-      <link>https://ivanorsolic.github.io/post/ai-and-ocr---volunteeringtoday/</link>
-      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/post/ai-and-ocr---volunteeringtoday/</guid>
-      <description>Volunteering.today Recently, my team and I were competing an the ChangeCode hackathon in Zagreb, at the King ICT company.
-The task was helping three kinds of people:
- Volunteering centers Volunteering event organizers Volunteers  We were free to come up with anything we thought would be helpful, and we had 24 hours to do so. We managed to get 10.000 HRK award, and an offer to continue working on the app to implement it completely with the organizers.</description>
     </item>
     
     <item>
