@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hardware hacking tutorial: Reversing and emulating firmware</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://ivanorsolic.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c#.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.40.3" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Hardware hacking tutorial: Reversing and emulating firmware</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Tuts and write-ups</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:ivanorsolic@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/ivanorsolic/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ivanorsolic/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ivanorsolic/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/ivanorsolic/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/hardwarehacking2/">Hardware hacking tutorial: Reversing and emulating firmware</a></h4>
+    <h5>September 1, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/reversing"><kbd class="item-tag">reversing</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/hardware-hacking"><kbd class="item-tag">hardware hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h1 id="the-idea">The idea</h1>
+
+<p><a href="https://ivanorsolic.github.io/post/hardwarehacking1/">In a previous tutorial, we&rsquo;ve talked about how embedded devices can have vulnerabilities inside, and one way to detect them, and to protect yourself from them, is to check them out by yourself.</a></p>
+
+<p>This will be focusing on the same idea, just without dumping the firmware yourself. Perhaps it is a new firmware update you want to flash to your device, and you have the file on your PC.</p>
+
+<p>The procedure will be pretty much the same, but only this time, instead of dumping the firmware on or own, online available firmware will be used, that a series of D-Link routers use, from DIR-300s to DIR-600s. It will be extracted using Binwalk, in order to find vulnerable parts of the web administration system, and to emulate the firmware on a virtual machine, since testing out possible found exploits against real routers would be illegal</p>
+
+<h1 id="used-tools">Used tools</h1>
+
+<h2 id="firmware-analysis-software-firmadyne-fmk-binwalk-fat">Firmware analysis software: Firmadyne, FMK, Binwalk, FAT</h2>
+
+<p>During the firmware reverse engineering part of this tutorial a number of software available will be used for emulation, analysis and debugging of firmware.</p>
+
+<h3 id="firmadyne">Firmadyne</h3>
+
+<p><strong>Firmadyne</strong> was created by a group of researchers from the <strong>Carnegie Mellon University</strong> and <strong>Boston University</strong>, led by <strong>Daming D. Chen</strong>. According to them:</p>
+
+<p>“<strong><em>FIRMADYNE is an automated and scalable system for performing emulation and dynamic analysis of Linux-based embedded firmware.</em></strong>” <strong>(D. Chen, n.d..)<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></strong></p>
+
+<p>In their paper Towards Automated Dynamic Analysis for Linux-based Embedded Firmware published on the Network and Distributed System Security Symposium (NDSS), they say they’ve tested the system on over 23 thousand firmware images, being able to extract under 10 thousand of them and show on a control set of 1971 images that over 43% of them were vulnerable to at least one exploit. (D. Chen et al., 2016.) <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></p>
+
+<h3 id="firmware-mod-kit">Firmware-Mod-Kit</h3>
+
+<p><strong>The Firmware-Mod-Kit (FMK)</strong> was created by <strong>Craig Heffner (/dev/ttyS0)</strong> and <strong>Jeremy Collake</strong>. According to its Wiki:</p>
+
+<p>“<em>The Firmware Mod Kit allows for easy deconstruction and reconstruction of firmware images for various embedded devices.</em> ” <strong>(FMK Wiki, n.d..) <sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup></strong></p>
+
+<h3 id="binwalk">Binwalk</h3>
+
+<p>Binwalk is another tool made by <strong>Craig Heffner (/dev/ttyS0)</strong>, and according to him:</p>
+
+<p>“<strong><em>Binwalk is a fast, easy to use tool for analysing, reverse engineering, and extracting firmware images.</em></strong> ”</p>
+
+<h3 id="firmware-analysis-toolkit">Firmware Analysis Toolkit</h3>
+
+<p><strong>The Firmware Analysis Toolkit (FAT)</strong> combines <strong>Firmadyne, FMK, Binwalk</strong> and a couple of more systems and toolkits to automatize the process of firmware emulation. It was made by Attify for their training course “Offensive IoT Exploitation”.</p>
+
+<p>According to Atiffy:</p>
+
+<p>“<strong><em>FAT is a toolkit built in order to help security researchers analyse and identify vulnerabilities in IoT and embedded device firmware.</em></strong> ” <strong>(Attify Github, 2017.) <sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup></strong></p>
+
+<h1 id="the-attack">The attack</h1>
+
+<h2 id="emulating-the-firmware">Emulating the firmware</h2>
+
+<p><img src="/img/emulation.jpg#center" alt=" Firmadyne and FAT firmware emulation " /></p>
+
+<p>The firmware emulation process is pretty straightforward using Firmadyne and the Firmware Analysis Toolkit. A Python script is run that asks for the path to the firmware that needs to be emulated, and then takes care of the rest.</p>
+
+<h2 id="unpacking-the-firmware">Unpacking the firmware</h2>
+
+<p><img src="/img/unpacking.jpg#center" alt="Binwalk extracting D-Link firmware " /></p>
+
+<p>The procedure is same as before, the -e flag is used to extract the given binary file. As seen above, there isn’t anything immediately obvious that could be of interest, like the case was with the Mikrotik firmware that was dumped, so it’s necessary to take a look around for possible vulnerabilities. It can, however, be seen that the router is running a custom Linux OS and that there is a Squashfs filesystem, that Binwalk should have unpacked.</p>
+
+<p>The filesystem should be accessible just like any Linux OS filesystem by opening the folder Binwalk created and navigating to the squashfs-root folder.</p>
+
+<p><img src="/img/filesystem.jpg#center" alt="Squashfs root filesystem of the router " /></p>
+
+<p>Looks like Binwalk managed to unpack the firmware without any problems, and the root directory of the filesystem can be accessed. The question is, what is the best place to start with, since it is a relatively large number of files to search through.</p>
+
+<p>Perhaps it’s best to start by looking for the obvious, using grep. The obvious being substring occurrences such as ‘private key’ or ‘telnet’ or ‘admin’ or anything related to security, authentication. The files that contain a match should be made a priority to look through. Very often, vulnerabilities and hidden embedded secrets will be found this way.</p>
+
+<p><img src="/img/grep.jpg#center" alt=" &quot;grep -iRn 'telnet' . &quot; results " /></p>
+
+<p>Grep has revealed something peculiar. System.sh, the script which runs on system start up starts a telnet daemon using a script file found in the /misc/ folder. It starts the telnet daemon using the telnetd command, using the -l flag to execute login on an incoming telnet connection, the -u flag to specify the username and password in the format ‘username:password’, -i to run as a inetd service.</p>
+
+<p>The interesting part is the username and password one, since it would be nice to have a telnet username and password for a telnet daemon that starts up automatically by default on a whole series of routers.</p>
+
+<p><img src="/img/telnetdsh.jpg#center" alt="Contents of the telnetd.sh script " /></p>
+
+<p>Opening the telnet daemon start up script, it’s easy to see that the script uses a variable called image_sign as the password for the telnet login. The content of the variable is acquired by reading the contents of the file image_sign, stored in the /etc/config/ folder, which is presumably unique to the current version of the image, the firmware.</p>
+
+<p><img src="/img/catpwd.jpg#center" alt=" Obtaining the password using cat " /></p>
+
+<p>The password is obviously not random, it’s rather made using the version of the router that runs the software, in this case the DIR-300 router, version B.</p>
+
+<p>That means that not only this router is vulnerable to the attack, but for an example, a DIR-600, version C router should be possible to access by just changing the last part of the password to dir300c.</p>
+
+<p>But, it’s enough that even the DIR-300 series is accessible using the found username and password (Alphanetworks:wrgn23_dlwbr_dir300b).</p>
+
+<p><a href="https://ivanorsolic.github.io/post/hardwarehacking2/">Since a similar exploit was found on the last router, the Mikrotik one</a>, this isn’t that interesting. Sure, it’s fine finding some hardcoded OpenSSH keys or default telnet login credentials, but there other vulnerabilities out there. Since access to the web application used to manage the router is possible, it can be analysed to see if there are any more vulnerabilities lurking around.</p>
+
+<p><img src="/img/wwwfolder.jpg#center" alt=" Contents of the www folder " /></p>
+
+<p>As expected, there is a lot of files to go through for the web application. The first usual step taken is to check if some files are accessible without logging into the router.</p>
+
+<p>One such file that may seem of interest is <strong>DevInfo.php</strong>, which returns miscellaneous information about the device, but shouldn’t be accessible to the public nonetheless.</p>
+
+<p><img src="/img/devinfophp.jpg#center" alt=" DevInfo.php results in a browser " /></p>
+
+<p>Sure enough, it is accessible without actual authorization, but the information it provides is not of much consequence. But if one script is accessible to the public without proper authorization, there might be more, and some of them might be not so harmless.</p>
+
+<p>There is no easy way of determining this, so the best approach is to try and identify some possible targets by their name, and briefly look through them. Soon enough, the model folder is found, which contains a file called <strong>__show_info.php</strong>.</p>
+
+<p><img src="/img/showinfophp.jpg#center" alt="Contents of the __show_info.php script" /></p>
+
+<p>The interesting part of the script, which isn’t that obvious on the first sight (hence the red rectangle), is that it checks if there is a GET parameter called REQUIRE_FILE sent to the script. If it is not empty, the script will proceed to get the contents of the file, using the PHP require function starting at the root of the filesystem.</p>
+
+<p>The require function is similar to the include function, found in many languages. Bluntly speaking, it just appends the contents of the ‘required’ file to the position where the function is called.</p>
+
+<p>If the script works as said, what is stopping someone from just requiring the file in which the username and password for the system are stored? Since the PHP script is run by the server, the system, permissions shouldn’t be a problem.</p>
+
+<p><img src="/img/httpasswd.jpg#center" alt="Getting the httpasswd file using the show_info script " /></p>
+
+<p>Requesting the contents of the file /var/etc/httpasswd, in which the username and password for the web application are stored, the result is actually successful.</p>
+
+<p><strong>It’s not even hashed using any crypto algorithm, it’s returned back in plain text.</strong></p>
+
+<p>Just to prove that this doesn’t only work for the default username and password, let’s go ahead and change the password to: “PlaintextVerySecure” and try it again.</p>
+
+<p><img src="/img/newpassword.jpg#center" alt="Checking for the changed password " /></p>
+
+<p>Unfortunately for all the D-Link users out there, it works. After logging into the admin panel of the web application, a malicious attacker can virtually do anything he wants.</p>
+
+<p>From opening a telnet backdoor to MITM attacks. Speaking of D-Link users, it is possible to see how many of them are running this particular vulnerable version of the firmware and the http server (Mathopd/1.5p6) using Shodan.</p>
+
+<p><img src="/img/shodandlink.jpg#center" alt="Vulnerable D-Link routers on Shodan " /></p>
+
+<p>At the time of writing, there were 14,871 vulnerable routers out there to this attack, and most, if not all can be accessed using the Shodan provided ip addresses.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Dominic Chen, Carnegie Mellon University on Github. (n.d.). Firmadyne FAQ. Retrieved August 22, 2017, from: <a href="https://github.com/firmadyne/firmadyne">https://github.com/firmadyne/firmadyne</a> 
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">Daming D. Chen, Manuel Egele, Maverick Woo, David Brumely, Carnegie Mellon University and the Boston University. (2016). Towards Automated Dynamic Analysis for Linux-based Embedded Firmware. Retrieved August 22, 2017, from: <a href="https://github.com/firmadyne/firmadyne/blob/master/paper/paper.pdf">https://github.com/firmadyne/firmadyne/blob/master/paper/paper.pdf</a> 
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">Firmware Mod Kit, Google Code. (n.d.). Firmware Mod Kit – Documentation. Retrieved August 22, 2017, from: <a href="https://code.google.com/archive/p/firmware-modkit/wikis/Documentation.wiki">https://code.google.com/archive/p/firmware-modkit/wikis/Documentation.wiki</a> 
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">Aditya Gupta, Attify on Github. (2017). Firmware Analysis Toolkit. Retrieved August 22, 2017, from: <a href="https://github.com/attify/firmware-analysis-toolkit">https://github.com/attify/firmware-analysis-toolkit</a>
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+</ol>
+</div>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ai-and-ocr---volunteeringtoday/">AI and OCR: Volunteering.today</a></h4>
+    <h5>April 21, 2018</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/car-hacking"><kbd class="item-tag">car hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/tempest/">Tempest attacks using a DVB-T stick</a></h4>
+    <h5>February 6, 2018</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/tut"><kbd class="item-tag">tut</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/hardwarehacking1/">Hardware hacking tutorial: Dumping and reversing firmware</a></h4>
+    <h5>September 1, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/reversing"><kbd class="item-tag">reversing</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/hardware-hacking"><kbd class="item-tag">hardware hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "oriblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

@@ -115,13 +115,48 @@ An ideal SDR receiver consists of an antenna, ADC2 attached to that antenna, a D
     </item>
     
     <item>
-      <title>Car hacking: Replay attack /w SDR</title>
+      <title>Hardware hacking tutorial: Dumping and reversing firmware</title>
+      <link>https://ivanorsolic.github.io/post/hardwarehacking1/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/post/hardwarehacking1/</guid>
+      <description>The idea So you might just have an old router or device lying around, and you&amp;rsquo;re interested what you can find inside. Or, you&amp;rsquo;re legitimately worried that your devices aren&amp;rsquo;t safe, or contain some oversight made by engineers in terms of security.
+Unfortunately, the latter is very much true, very often. Not by all companies, even by some of the best companies, embedded security is a huge oversight, and an even bigger problem in the years coming, since the number of devices connected to the internet is exponentially growing.</description>
+    </item>
+    
+    <item>
+      <title>Hardware hacking tutorial: Reversing and emulating firmware</title>
+      <link>https://ivanorsolic.github.io/post/hardwarehacking2/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/post/hardwarehacking2/</guid>
+      <description>The idea In a previous tutorial, we&amp;rsquo;ve talked about how embedded devices can have vulnerabilities inside, and one way to detect them, and to protect yourself from them, is to check them out by yourself.
+This will be focusing on the same idea, just without dumping the firmware yourself. Perhaps it is a new firmware update you want to flash to your device, and you have the file on your PC.</description>
+    </item>
+    
+    <item>
+      <title>Car hacking tutorial: Replay attack /w SDR</title>
       <link>https://ivanorsolic.github.io/post/car-hacking/</link>
-      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/post/car-hacking/</guid>
-      <description>Replay attacks Image taken from: DashlaneThis tutorial will go through stealing credentials from a fully locked, fully patched (at the time of writing) Windows, Mac OS X or Linux machine.
-Since the time of writing, the attack has become very well documented on the internet, and patches were released from OS manufacturers such as Microsoft1. Unfortunately, even after testing the attack on a Windows 10 PC with the newest patches, it was still successful.</description>
+      <description>Replay attacks Image taken from: NullBytesIf you want to find out what SDR is, check out my other post:
+Tempest attacks
+Remote keyless systems Wiki defines RKS as:
+ The term remote keyless system (RKS), also called keyless entry or remote central locking, refers to a lock that uses an electronic remote control as a key which is activated by a handheld device or automatically by proximity.
+ As we all well know, today&amp;rsquo;s cars all have keys that can remotely unlock your car with the push of a button.</description>
+    </item>
+    
+    <item>
+      <title>Hardware hacking tutorial: Interfacing with debug ports</title>
+      <link>https://ivanorsolic.github.io/post/hardwarehacking3/</link>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/post/hardwarehacking3/</guid>
+      <description>The idea In the past two post, we&amp;rsquo;ve seen that we can dump firmware directly from the flash chip, or that we can reverse engineer the firmware found online for our devices.
+But why bother, if we have a debug port out in the open?
+Let&amp;rsquo;s try it out.
+Used gear CJMCU-232H FTDI 232H is a chip made by Future Technology Devices International. CJMCU-232H is a breakout board with a 232H chip integrated which allows users easily use the chip via USB.</description>
     </item>
     
     <item>

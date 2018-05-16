@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hardware hacking tutorial: Interfacing with debug ports</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://ivanorsolic.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c#.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.40.3" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Hardware hacking tutorial: Interfacing with debug ports</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Tuts and write-ups</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:ivanorsolic@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/ivanorsolic/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ivanorsolic/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ivanorsolic/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/ivanorsolic/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/hardwarehacking3/">Hardware hacking tutorial: Interfacing with debug ports</a></h4>
+    <h5>August 31, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/reversing"><kbd class="item-tag">reversing</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/hardware-hacking"><kbd class="item-tag">hardware hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h1 id="the-idea">The idea</h1>
+
+<p>In the past two post, we&rsquo;ve seen that <a href="https://ivanorsolic.github.io/post/hardwarehacking1/">we can dump firmware directly from the flash chip</a>, or that <a href="https://ivanorsolic.github.io/post/hardwarehacking2/">we can reverse engineer the firmware found online for our devices</a>.</p>
+
+<p>But why bother, if we have a debug port out in the open?</p>
+
+<p>Let&rsquo;s try it out.</p>
+
+<h1 id="used-gear">Used gear</h1>
+
+<h2 id="cjmcu-232h">CJMCU-232H</h2>
+
+<p>FTDI 232H is a chip made by Future Technology Devices International. CJMCU-232H is a breakout board with a 232H chip integrated which allows users easily use the chip via USB. It can be used to communicate via USB to UART (RS232, RS422 or RS485), FIFO, JTAG, SPI, I2C, Bit-Bang and many more. It will be used it for UART and JTAG communication with attacked devices.</p>
+
+<p><img src="/img/cjmcu.jpg#center" alt="CJMCU-232H" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://ebay.com">
+Ebay</a></em>
+</p>
+
+<h1 id="target">Target</h1>
+
+<p>The target will be the Ubiquiti mFi mPort. It will be disassembled to find possible debug ports, and connected to, using the CJMCU-232H.</p>
+
+<h2 id="finding-the-debug-ports">Finding the debug ports</h2>
+
+<p>First, the housing that holds the mFi mPort needs to be taken apart</p>
+
+<p><img src="/img/mfi.jpg#center" alt="Disassembled Ubiquiti mFi mPort " /></p>
+
+<p>Right away a header can be seen with four pins soldered on the PCB of the device. With a little trial and error, it can be determined which pins are for power, and which are for receiving and transmitting.</p>
+
+<h2 id="interfacing-the-uart-port-with-the-cjmcu-232h">Interfacing the UART port with the CJMCU-232H</h2>
+
+<p>Unlike SPI, UART is really simple. The receiving pin of the device is connected to the transmitting pin of the CJMCU-232H and vice versa. Then it needs to be connected to common ground, and if the device has to be powered through the CJMCU-232H, or vice versa, the appropriate power pin needs to be connected, in this case 3.3 volts.</p>
+
+<p><img src="/img/mficjmcu.jpg#center" alt="CJMCU-232H interfaced to the mFi via UART " /></p>
+
+<p>In this case, since the mFi needs a lot more ‘juice’ than the CJMCU-232H can provide, and a Power over Ethernet (PoE) adapter along with an ethernet cable needs to be used to provide 24 volts and 0.5 amps to the board. The analog pin 0 and 1 on the CJMCU serve as the dedicated transmit (TX) and receive (RX) pins for serial communication, respectively. After connecting them with the RX and TX pins on the board and the setup is ready to go.</p>
+
+<h2 id="gaining-shell-access-and-exploiting">Gaining shell access and exploiting</h2>
+
+<p>Now that everything is connected, a terminal window can be opened, along with a serial connection using the GNU/Linux software screen. That can be done by running the command screen /dev/ttyUSB0 115200.</p>
+
+<p>The first parameter is the USB interface of the CJMCU-232H, found at /dev/ttyUSB0. The second is the baud rate, with 115200 bauds being the most common used speed. A baud is a unit of transmission speed, it corresponds to the number of times a signal changes it state per second</p>
+
+<p><img src="/img/mfishell.jpg#center" alt="mFi mPort shell" /></p>
+
+<p>After connecting to the serial port, the screen says to press Enter to activate the console, after which it asks for credentials.</p>
+
+<p>The best bet is to try the default credentials, which are easily found online. For Ubiquiti (abbreviated: UBNT), the credentials are very easy to guess even without searching online, they’re ubnt (both username and password, like admin:admin).</p>
+
+<p>And a root shell is available! Since it’s impossible to physically take apart and connect to every router that a malicious a user wants to attack, he/she can look for something that would allow remote control, like private keys or vulnerable points of the system.</p>
+
+<p><img src="/img/mfiroot.jpg#center" alt="Root password found on the mFi " /></p>
+
+<p><img src="/img/mfiuser.jpg#center" alt="User password found on the mFi " /></p>
+
+<p>The passwords in the etc/passwd files, both root and user are easily obtained, along with some server private keys and certificates.</p>
+
+<p><img src="/img/mfisecrets.jpg#center" alt="Ubiquiti server private key and certificate found on the mFi " /></p>
+
+<p>Looking up the certificate online, it can be determined that the owner is Ubiquiti Networks.</p>
+
+<p><img src="/img/mficert.jpg#center" alt="SSLShoppeer certificate verification " /></p>
+
+<p>It can also be determined that the private key and the certificate match, and that the private key is actually a private SSL key for Ubiquiti Networks.</p>
+
+<p><img src="/img/mfikey.jpg#center" alt="SSLShopper private key and certification verification " /></p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ai-and-ocr---volunteeringtoday/">AI and OCR: Volunteering.today</a></h4>
+    <h5>April 21, 2018</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/car-hacking"><kbd class="item-tag">car hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/tempest/">Tempest attacks using a DVB-T stick</a></h4>
+    <h5>February 6, 2018</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/tut"><kbd class="item-tag">tut</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/hardwarehacking2/">Hardware hacking tutorial: Reversing and emulating firmware</a></h4>
+    <h5>September 1, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/reversing"><kbd class="item-tag">reversing</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/hardware-hacking"><kbd class="item-tag">hardware hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "oriblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

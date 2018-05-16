@@ -49,8 +49,23 @@
   </url>
   
   <url>
+    <loc>https://ivanorsolic.github.io/post/hardwarehacking1/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/post/hardwarehacking2/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ivanorsolic.github.io/post/car-hacking/</loc>
-    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/post/hardwarehacking3/</loc>
+    <lastmod>2017-08-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -117,6 +132,12 @@
   
   <url>
     <loc>https://ivanorsolic.github.io/tags/hacktoberfest/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/hardware-hacking/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -214,6 +235,12 @@
   <url>
     <loc>https://ivanorsolic.github.io/tags/responder/</loc>
     <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanorsolic.github.io/tags/reversing/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

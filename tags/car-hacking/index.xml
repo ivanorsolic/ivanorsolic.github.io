@@ -23,13 +23,16 @@ The task was helping three kinds of people:
     </item>
     
     <item>
-      <title>Car hacking: Replay attack /w SDR</title>
+      <title>Car hacking tutorial: Replay attack /w SDR</title>
       <link>https://ivanorsolic.github.io/post/car-hacking/</link>
-      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 31 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://ivanorsolic.github.io/post/car-hacking/</guid>
-      <description>Replay attacks Image taken from: DashlaneThis tutorial will go through stealing credentials from a fully locked, fully patched (at the time of writing) Windows, Mac OS X or Linux machine.
-Since the time of writing, the attack has become very well documented on the internet, and patches were released from OS manufacturers such as Microsoft1. Unfortunately, even after testing the attack on a Windows 10 PC with the newest patches, it was still successful.</description>
+      <description>Replay attacks Image taken from: NullBytesIf you want to find out what SDR is, check out my other post:
+Tempest attacks
+Remote keyless systems Wiki defines RKS as:
+ The term remote keyless system (RKS), also called keyless entry or remote central locking, refers to a lock that uses an electronic remote control as a key which is activated by a handheld device or automatically by proximity.
+ As we all well know, today&amp;rsquo;s cars all have keys that can remotely unlock your car with the push of a button.</description>
     </item>
     
   </channel>

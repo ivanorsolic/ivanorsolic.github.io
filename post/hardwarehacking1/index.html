@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hardware hacking tutorial: Dumping and reversing firmware</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://ivanorsolic.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c#.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.40.3" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Hardware hacking tutorial: Dumping and reversing firmware</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Tuts and write-ups</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:ivanorsolic@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/ivanorsolic/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/ivanorsolic/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/ivanorsolic/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/ivanorsolic/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/hardwarehacking1/">Hardware hacking tutorial: Dumping and reversing firmware</a></h4>
+    <h5>September 1, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/reversing"><kbd class="item-tag">reversing</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/hardware-hacking"><kbd class="item-tag">hardware hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h1 id="the-idea">The idea</h1>
+
+<p>So you might just have an old router or device lying around, and you&rsquo;re interested what you can find inside. Or, you&rsquo;re legitimately worried that your devices aren&rsquo;t safe, or contain some oversight made by engineers in terms of security.</p>
+
+<p>Unfortunately, the latter is very much true, very often. Not by all companies, even by some of the best companies, embedded security is a huge oversight, and an even bigger problem in the years coming, since the number of devices connected to the internet is exponentially growing. And that is scary. Why? Turns out, a lot of devices contain embedded secrets, backdoors and all kinds of dangerous practices made by oversight or just bad engineering.</p>
+
+<p>But fear not, you can check your devices, as long as you&rsquo;re not reversing them for their IP or to cause any malice.</p>
+
+<p>We can interface with the on-board ports on the device, often left in the open by engineers for debugging or flashing new software. And we&rsquo;ll cover those in two other tutorials. But what happens when you have no port lying around for you, but you really want to check out that ROM written on the Flash?</p>
+
+<p>Let&rsquo;s check it out. But we&rsquo;ll need some gear first.</p>
+
+<h1 id="used-gear">Used gear</h1>
+
+<h2 id="buspirate">BusPirate</h2>
+
+<p>The BusPirate was created by DangerousPrototypes’ Ian Lesnet, and it is a troubleshooting tool that communicates between a PC and any embedded device over 1-wire, 2-wire, 3-wire, UART, I2C, SPI, and HD44780 LCD protocols - all at voltages from 0- 5.5VDC. (SparkFun, n.d.) It will be used for recovering SPI flash data from a router (firmware dumping) and for UART serial communication.</p>
+
+<p><img src="/img/buspirate.jpg#center" alt="BusPirate" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://learn.sparkfun.com">
+Sparkfun</a></em>
+</p>
+
+<h2 id="cjmcu-232h">CJMCU-232H</h2>
+
+<p>FTDI 232H is a chip made by Future Technology Devices International. CJMCU-232H is a breakout board with a 232H chip integrated which allows users easily use the chip via USB. It can be used to communicate via USB to UART (RS232, RS422 or RS485), FIFO, JTAG, SPI, I2C, Bit-Bang and many more. It will be used it for UART and JTAG communication with attacked devices.</p>
+
+<p><img src="/img/cjmcu.jpg#center" alt="CJMCU-232H" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://ebay.com">
+Ebay</a></em>
+</p>
+
+<h1 id="target">Target</h1>
+
+<p>The target will be the Mikrotik mAP2n router.</p>
+
+<p><img src="/img/map.jpg#center" alt="MAP" /></p>
+
+<p>Since the goal is to extract the firmware on it, and check out any other possible attack vectors, some disassembly will be needed first.</p>
+
+<p><img src="/img/mapdiss1.jpg#center" alt="MAP dissasembled 1" /></p>
+
+<p>Prying the router open was very easy, and seeing the front side a serial port can almost immediately be seen, marked as TX (transmit) and RX (receive).</p>
+
+<p><img src="/img/mapdiss2.jpg#center" alt="MAP dissasembled 2" /></p>
+
+<p>On the backside, the other two pins needed for serial communication can be seen, the power (3V3) and the common ground (GND) pins.</p>
+
+<p>Disclaimer: they are not actually pins, but spots where so-called pogo pin connectors can be placed to achieve connection, but that’s just semantics, and since they don’t really have a defined name, I&rsquo;ll refer to them as pins. K, thx.</p>
+
+<p>A JTAG port or an interface, can also be seen, marked with 3V3 for the 3.3V power pin, a ground symbol for the ground port, TCK for Test Clock, RST for Test Reset, TMS for Test Mode Select, TDI for Test Data In and an unmarked one which is most probably just the TDO for Test Data Out. JTAG stands for Joint Test Action Group and the interface allows hardware developers to test and diagnose system faults on the board, and to upload data into various memory chips on the board. In this case, it was most probably used to flash the firmware into the SPI flash chip on the board.</p>
+
+<p>Speaking of which, a Winbond 25Q128FVSG Serial Peripheral Interface (SPI) Flash Memory chip can be seen, which is most likely the memory in which the firmware and all the device data are stored.</p>
+
+<h2 id="interfacing-with-the-spi-flash-chip">Interfacing with the SPI Flash Chip</h2>
+
+<p>Now the most likely candidate that holds the firmware has been identified, the Winbond SPI Flash chip, it should be easy to find a way to read it and store it outside of the chip. That is where the BusPirate comes in handy. It can be connected to the legs of the SPI SMD chip using Saleae probes and then some software can be used to tell the BusPirate to copy all the data from the chip to the computer. But first, it’s important to understand how to interface the BusPirate to the chip, and how the SPI protocol works.</p>
+
+<h3 id="the-spi-protocol">The SPI Protocol</h3>
+
+<p><img src="/img/spi.jpg#center" alt="SPI protocol image" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://learn.sparkfun.com">
+Sparkfun</a></em>
+</p>
+
+<p>The picture above shows a diagram of SPI communication between a Master and a Slave. There are four channels needed:</p>
+
+<ul>
+<li>SCK which stands for Serial Clock (more often CLK). The side which generates the clock is always the master.</li>
+<li>MOSI – Master-Out, Slave-In (like TX on the serial protocol). MOSI is used when the Master needs to send data to the slave.</li>
+<li>MISO – Master-In, Slave-Out (like RX on the serial protocol). MISO is used when the Slave needs to send data to the master.</li>
+<li>SS – Slave-Select (more often Chip Select, CS) There is always only one master, but there can be several slaves. SS or CS is used to tell the slave to wake up and start sending/receiving data. It is also used to select which slave wants to be communicated with, if there are several.</li>
+</ul>
+
+<p>After gaining a basic understanding of the SPI Protocol, the BusPirate is easily connected to the chip, and the software works out the rest.</p>
+
+<h3 id="buspirate-pinout">BusPirate pinout</h3>
+
+<p><img src="/img/bppinout.jpg#center" alt="Buspirate pinout" /></p>
+
+<p>The BusPirate pins are very easy to find, since they are marked right on the board. There are all four pins needed, plus the power (3V3, 3.3 volts) and the common ground pin, which are necessary to provide power to the device and operate it.</p>
+
+<h3 id="winbond-w25q128fvsg-pinout">Winbond W25Q128FVSG  pinout</h3>
+
+<p>The Winbond chip on the other hand doesn’t have its pins clearly marked, but the pinout can be found in its datasheet, which is available online.</p>
+
+<p><img src="/img/wbpinout.jpg#center" alt="WinBond pinout" /></p>
+
+<p align="center">
+<em>Image taken from: <a href="https://pjrc.com">
+pjrc.com</a></em>
+</p>
+
+<h3 id="connecting-bp-to-the-spi-flash">Connecting BP to the SPI Flash</h3>
+
+<p>After identifying all the pins needed to interface the BusPirate to the SPI chip, all that remains is to connect them using jumper cables and Saleae probes.</p>
+
+<p><img src="/img/bpspi.jpg#center" alt="BP connected" /></p>
+
+<h3 id="dumping-the-firmware-w-flashrom">Dumping the firmware /w flashrom</h3>
+
+<p>Flashrom is a utility used for identifying, reading, writing, verifying and erasing flash memory chips. It will be used it in conjunction with the BusPirate to obtain SPI Flash chip contents.</p>
+
+<p>The BusPirate is connected to a laptop running a Kali virtual machine. Running the lsusb command in a Kali terminal, the BusPirate is listed, which means it is recognized and ready to go.</p>
+
+<p><img src="/img/lsusb.jpg#center" alt="lsusb" /></p>
+
+<p>Next, Flashrom will be used in order to try to connect to the BusPirate and see if it recognizes the chip connected to it. If all goes well, that means the pins are connected the right way and are ready for the ‘dumping’ part.</p>
+
+<p><img src="/img/flashrom1.jpg#center" alt="Flashrom 1" /></p>
+
+<p>The Flashrom software has indeed found the Winbond flash chip “W25Q128.V” and is ready for use. The flag -p in the command stands for programmer, and it can be used to specify that a BusPirate is connected to a SPI chip, and that it is accessible through /dev/ttyUSB0. Also, the SPI speed is set to 1 MHz, which is the middle ground between reliability and speed. The speed can range from 30K to 8M</p>
+
+<p><img src="/img/flashrom2.jpg#center" alt="Flashrom 2" /></p>
+
+<p>The command used to read out the firmware is the same as the previous one, with two new flags. The first new flag, -r stands for read, which accepts a filename as a parameter into which the contents of the flash ROM are stored. The second flag is -VVV, which stands for verbose, which has multiple levels. The three V is the most verbose level, which will be used since the details of the dumping will be analysed.</p>
+
+<p>The delay loop the BusPirate uses is a bit off, probably since the data is being sent via USB first through the BusPirate to the host OS, and then from the host OS to the virtual machine running Kali. But nonetheless, it manages to recalibrate and factor in the delay of about 14% (14 microseconds per 100 microseconds).</p>
+
+<p><img src="/img/flashrom3.jpg#center" alt="Flashrom 3" /></p>
+
+<p>The Flashrom software then continues to probe for various chips, as it did the first time, until it finds the Winbond flash chip. Then it maps the flash region selecting the area of the memory which contains data, checks if block protection is enabled and if all goes well, the BusPirate starts to send the data which is stored into the file passed as the parameter to the -r flag. The data is displayed as a hex stream. Since only 1MHz speed is used, it will take a while until the chip data is copied to the laptop.</p>
+
+<h3 id="unpacking-the-binary-firmware-w-binwalk">Unpacking the binary firmware /w Binwalk</h3>
+
+<p>After the BusPirate is finished, the unpacking step can begin, for which Binwalk will be used.</p>
+
+<p>Binwalk is another tool made by Craig Heffner (/dev/ttyS0), and according to him: “Binwalk is a fast, easy to use tool for analysing, reverse engineering, and extracting firmware images.”</p>
+
+<p><img src="/img/binwalk1.jpg#center" alt="binwalk -Me image" /></p>
+
+<p>The flag -M stands for matryoshka, which recursively scans extracted files, and if needed extracts the found compressed files. The flag -e stands for extract, which automatically extracts known filetypes.</p>
+
+<p><img src="/img/binwalk2.jpg#center" alt="binwalk results" /></p>
+
+<p>Some files of interest can alredy be seen during the extraction period. One of them is a PEM DSA private key, and an OpenSSH DSA public key, most likely used for authentication and remote control of the device. They can be either carved out using the GNU/Linux tool dd, or manually searched for, among the extracted files.</p>
+
+<p><img src="/img/dsapriv.jpg#center" alt="DSA priv key" /></p>
+
+<p>After a little research, a possible use for the key is found. “Since RouterOS 2.9.13 support for SSH DSA keys and passing commands via ssh has been available. This allows you to run scripts from a remote machine against RouterOS without too much trouble anymore.”. (Mikrotik Wiki, n.d.)</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ai-and-ocr---volunteeringtoday/">AI and OCR: Volunteering.today</a></h4>
+    <h5>April 21, 2018</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/car-hacking"><kbd class="item-tag">car hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/tempest/">Tempest attacks using a DVB-T stick</a></h4>
+    <h5>February 6, 2018</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/sdr"><kbd class="item-tag">sdr</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/tut"><kbd class="item-tag">tut</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/hardwarehacking2/">Hardware hacking tutorial: Reversing and emulating firmware</a></h4>
+    <h5>September 1, 2017</h5>
+    
+    <a href="https://ivanorsolic.github.io/tags/reversing"><kbd class="item-tag">reversing</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/hardware-hacking"><kbd class="item-tag">hardware hacking</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/infosec"><kbd class="item-tag">infosec</kbd></a>
+    
+    <a href="https://ivanorsolic.github.io/tags/embedded"><kbd class="item-tag">embedded</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "oriblog" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
