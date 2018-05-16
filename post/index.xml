@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Ori&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivanorsolic.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AI and OCR: Volunteering.today</title>
+      <link>https://ivanorsolic.github.io/post/ai-and-ocr---volunteeringtoday/</link>
+      <pubDate>Sat, 21 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanorsolic.github.io/post/ai-and-ocr---volunteeringtoday/</guid>
+      <description>Volunteering.today Recently, my team and I were competing an the ChangeCode hackathon in Zagreb, at the King ICT company.
+The task was helping three kinds of people:
+ Volunteering centers Volunteering event organizers Volunteers  We were free to come up with anything we thought would be helpful, and we had 24 hours to do so. We managed to get 10.000 HRK award, and an offer to continue working on the app to implement it completely with the organizers.</description>
+    </item>
     
     <item>
       <title>Tempest attacks using a DVB-T stick</title>
@@ -20,17 +31,6 @@
       <description>SDR The Wiki defines SDR as:1
 Software-defined radio (SDR) is a radio communication system where components that have been traditionally implemented in hardware (e.g. mixers, filters, amplifiers, modulators/demodulators, detectors, etc.) are instead implemented by means of software on a personal computer or embedded system.
 An ideal SDR receiver consists of an antenna, ADC2 attached to that antenna, a DSP3 which reads the output of the converter and some software which processes the output based on the users&amp;rsquo; need.</description>
-    </item>
-    
-    <item>
-      <title>AI and OCR: Volunteering.today</title>
-      <link>https://ivanorsolic.github.io/post/ai-and-ocr---volunteeringtoday/</link>
-      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanorsolic.github.io/post/ai-and-ocr---volunteeringtoday/</guid>
-      <description>Volunteering.today Recently, my team and I were competing an the ChangeCode hackathon in Zagreb, at the King ICT company.
-The task was helping three kinds of people:
- Volunteering centers Volunteering event organizers Volunteers  We were free to come up with anything we thought would be helpful, and we had 24 hours to do so. We managed to get 10.000 HRK award, and an offer to continue working on the app to implement it completely with the organizers.</description>
     </item>
     
     <item>
